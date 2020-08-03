@@ -1,0 +1,10 @@
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\bin\Debug\RAM to PKX Rip.exe.config
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\bin\Debug\RAM to PKX Rip.exe
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\bin\Debug\RAM to PKX Rip.pdb
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM_to_PKX_Rip.Form1.resources
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM_to_PKX_Rip.Properties.Resources.resources
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM to PKX Rip.csproj.GenerateResource.cache
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM to PKX Rip.csproj.CoreCompileInputs.cache
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM to PKX Rip.exe
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM to PKX Rip.pdb
+C:\Users\joell\Documents\Side Projects\Pokemon RAM Ripper\RAM to PKX Rip\obj\Debug\RAM to PKX Rip.csprojAssemblyReference.cache
