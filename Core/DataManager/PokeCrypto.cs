@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
+//Code imported from PKHeX credit goes to https://github.com/kwsch
 namespace RAM_to_PKX_Rip
 {
     class PokeCrypto
