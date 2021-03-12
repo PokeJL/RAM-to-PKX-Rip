@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.genSelect = new System.Windows.Forms.GroupBox();
             this.Gen2SW97 = new System.Windows.Forms.RadioButton();
             this.Gen3 = new System.Windows.Forms.RadioButton();
@@ -185,7 +186,7 @@
             this.Build.Name = "Build";
             this.Build.Size = new System.Drawing.Size(84, 13);
             this.Build.TabIndex = 32;
-            this.Build.Text = "Build: 20200802";
+            this.Build.Text = "Build: 20210312";
             // 
             // comboBox1
             // 
@@ -292,7 +293,7 @@
             // 
             // Icon
             // 
-            this.Icon.Image = global::RAM_to_PKX_Rip.Properties.Resources.b_0;
+            this.Icon.Image = ((System.Drawing.Image)(resources.GetObject("Icon.Image")));
             this.Icon.Location = new System.Drawing.Point(6, 147);
             this.Icon.Name = "Icon";
             this.Icon.Size = new System.Drawing.Size(68, 56);
