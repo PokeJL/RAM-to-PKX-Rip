@@ -48,18 +48,20 @@
   <ItemGroup>
     <Compile Include="Core\DataManager\File Manager.cs" />
     <Compile Include="Core\DataManager\Array_Manager.cs" />
-    <Compile Include="Core\Generation\Gen 3.cs" />
-    <Compile Include="Core\Generation\Gen 6.cs" />
+    <Compile Include="Core\Generation\Gen 2 SW97.cs" />
+    <Compile Include="Core\Generation\Gen 3 and Later Rip.cs" />
+    <Compile Include="Core\DataManager\Bit Check.cs" />
+    <Compile Include="Core\DataManager\Dex Conversion.cs" />
+    <Compile Include="Core\Resource\Gen 2 Beta Data.cs" />
     <Compile Include="Core\Resource\Offset.cs" />
+    <Compile Include="Core\Resource\Pokemon Data.cs" />
     <Compile Include="Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Core\Generation\Gen 4.cs" />
-    <Compile Include="Core\Generation\Gen 5.cs" />
-    <Compile Include="Core\DataManager\Hex Conversion.cs" />
+    <Compile Include="Core\DataManager\Data Conversion.cs" />
     <Compile Include="Core\DataManager\PokeCrypto.cs" />
     <Compile Include="Form\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +90,1609 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Form\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Sprites\b_egg.png" />
+    <None Include="Core\Resource\Images\Sprites\b_898-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_898-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_898.png" />
+    <None Include="Core\Resource\Images\Sprites\b_897.png" />
+    <None Include="Core\Resource\Images\Sprites\b_896.png" />
+    <None Include="Core\Resource\Images\Sprites\b_895.png" />
+    <None Include="Core\Resource\Images\Sprites\b_894.png" />
+    <None Include="Core\Resource\Images\Sprites\b_893-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_893.png" />
+    <None Include="Core\Resource\Images\Sprites\b_892-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_892-1-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_892.png" />
+    <None Include="Core\Resource\Images\Sprites\b_891.png" />
+    <None Include="Core\Resource\Images\Sprites\b_890-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_890.png" />
+    <None Include="Core\Resource\Images\Sprites\b_889-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_889.png" />
+    <None Include="Core\Resource\Images\Sprites\b_888-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_888.png" />
+    <None Include="Core\Resource\Images\Sprites\b_887.png" />
+    <None Include="Core\Resource\Images\Sprites\b_886.png" />
+    <None Include="Core\Resource\Images\Sprites\b_885.png" />
+    <None Include="Core\Resource\Images\Sprites\b_884-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_884.png" />
+    <None Include="Core\Resource\Images\Sprites\b_883.png" />
+    <None Include="Core\Resource\Images\Sprites\b_882.png" />
+    <None Include="Core\Resource\Images\Sprites\b_881.png" />
+    <None Include="Core\Resource\Images\Sprites\b_880.png" />
+    <None Include="Core\Resource\Images\Sprites\b_879-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_879.png" />
+    <None Include="Core\Resource\Images\Sprites\b_878.png" />
+    <None Include="Core\Resource\Images\Sprites\b_877-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_877.png" />
+    <None Include="Core\Resource\Images\Sprites\b_876-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_876.png" />
+    <None Include="Core\Resource\Images\Sprites\b_875-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_875.png" />
+    <None Include="Core\Resource\Images\Sprites\b_874.png" />
+    <None Include="Core\Resource\Images\Sprites\b_873.png" />
+    <None Include="Core\Resource\Images\Sprites\b_872.png" />
+    <None Include="Core\Resource\Images\Sprites\b_871.png" />
+    <None Include="Core\Resource\Images\Sprites\b_870.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-8-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-7-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-6-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-5-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-4-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-3-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-2-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-1-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_869-0-0.png" />
+    <None Include="Core\Resource\Images\Sprites\b_868.png" />
+    <None Include="Core\Resource\Images\Sprites\b_867.png" />
+    <None Include="Core\Resource\Images\Sprites\b_866.png" />
+    <None Include="Core\Resource\Images\Sprites\b_865.png" />
+    <None Include="Core\Resource\Images\Sprites\b_864.png" />
+    <None Include="Core\Resource\Images\Sprites\b_863.png" />
+    <None Include="Core\Resource\Images\Sprites\b_862.png" />
+    <None Include="Core\Resource\Images\Sprites\b_861-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_861.png" />
+    <None Include="Core\Resource\Images\Sprites\b_860.png" />
+    <None Include="Core\Resource\Images\Sprites\b_859.png" />
+    <None Include="Core\Resource\Images\Sprites\b_858-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_858.png" />
+    <None Include="Core\Resource\Images\Sprites\b_857.png" />
+    <None Include="Core\Resource\Images\Sprites\b_856.png" />
+    <None Include="Core\Resource\Images\Sprites\b_855.png" />
+    <None Include="Core\Resource\Images\Sprites\b_854.png" />
+    <None Include="Core\Resource\Images\Sprites\b_853.png" />
+    <None Include="Core\Resource\Images\Sprites\b_852.png" />
+    <None Include="Core\Resource\Images\Sprites\b_851-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_851.png" />
+    <None Include="Core\Resource\Images\Sprites\b_850.png" />
+    <None Include="Core\Resource\Images\Sprites\b_849-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_849-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_849.png" />
+    <None Include="Core\Resource\Images\Sprites\b_848.png" />
+    <None Include="Core\Resource\Images\Sprites\b_847.png" />
+    <None Include="Core\Resource\Images\Sprites\b_846.png" />
+    <None Include="Core\Resource\Images\Sprites\b_845-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_845-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_845.png" />
+    <None Include="Core\Resource\Images\Sprites\b_844-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_844.png" />
+    <None Include="Core\Resource\Images\Sprites\b_843.png" />
+    <None Include="Core\Resource\Images\Sprites\b_842.png" />
+    <None Include="Core\Resource\Images\Sprites\b_841-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_841.png" />
+    <None Include="Core\Resource\Images\Sprites\b_840.png" />
+    <None Include="Core\Resource\Images\Sprites\b_839-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_839.png" />
+    <None Include="Core\Resource\Images\Sprites\b_838.png" />
+    <None Include="Core\Resource\Images\Sprites\b_837.png" />
+    <None Include="Core\Resource\Images\Sprites\b_836.png" />
+    <None Include="Core\Resource\Images\Sprites\b_835.png" />
+    <None Include="Core\Resource\Images\Sprites\b_834-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_834.png" />
+    <None Include="Core\Resource\Images\Sprites\b_833.png" />
+    <None Include="Core\Resource\Images\Sprites\b_832.png" />
+    <None Include="Core\Resource\Images\Sprites\b_831.png" />
+    <None Include="Core\Resource\Images\Sprites\b_830.png" />
+    <None Include="Core\Resource\Images\Sprites\b_829.png" />
+    <None Include="Core\Resource\Images\Sprites\b_828.png" />
+    <None Include="Core\Resource\Images\Sprites\b_827.png" />
+    <None Include="Core\Resource\Images\Sprites\b_826-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_826.png" />
+    <None Include="Core\Resource\Images\Sprites\b_825.png" />
+    <None Include="Core\Resource\Images\Sprites\b_824.png" />
+    <None Include="Core\Resource\Images\Sprites\b_823-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_823.png" />
+    <None Include="Core\Resource\Images\Sprites\b_822.png" />
+    <None Include="Core\Resource\Images\Sprites\b_821.png" />
+    <None Include="Core\Resource\Images\Sprites\b_820.png" />
+    <None Include="Core\Resource\Images\Sprites\b_819.png" />
+    <None Include="Core\Resource\Images\Sprites\b_818-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_818.png" />
+    <None Include="Core\Resource\Images\Sprites\b_817.png" />
+    <None Include="Core\Resource\Images\Sprites\b_816.png" />
+    <None Include="Core\Resource\Images\Sprites\b_815-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_815.png" />
+    <None Include="Core\Resource\Images\Sprites\b_814.png" />
+    <None Include="Core\Resource\Images\Sprites\b_813.png" />
+    <None Include="Core\Resource\Images\Sprites\b_812-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_812.png" />
+    <None Include="Core\Resource\Images\Sprites\b_811.png" />
+    <None Include="Core\Resource\Images\Sprites\b_810.png" />
+    <None Include="Core\Resource\Images\Sprites\b_809-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_809.png" />
+    <None Include="Core\Resource\Images\Sprites\b_808.png" />
+    <None Include="Core\Resource\Images\Sprites\b_807.png" />
+    <None Include="Core\Resource\Images\Sprites\b_806.png" />
+    <None Include="Core\Resource\Images\Sprites\b_805.png" />
+    <None Include="Core\Resource\Images\Sprites\b_804.png" />
+    <None Include="Core\Resource\Images\Sprites\b_803.png" />
+    <None Include="Core\Resource\Images\Sprites\b_802.png" />
+    <None Include="Core\Resource\Images\Sprites\b_801-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_801.png" />
+    <None Include="Core\Resource\Images\Sprites\b_800-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_800-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_800-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_800.png" />
+    <None Include="Core\Resource\Images\Sprites\b_799.png" />
+    <None Include="Core\Resource\Images\Sprites\b_798.png" />
+    <None Include="Core\Resource\Images\Sprites\b_797.png" />
+    <None Include="Core\Resource\Images\Sprites\b_796.png" />
+    <None Include="Core\Resource\Images\Sprites\b_795.png" />
+    <None Include="Core\Resource\Images\Sprites\b_794.png" />
+    <None Include="Core\Resource\Images\Sprites\b_793.png" />
+    <None Include="Core\Resource\Images\Sprites\b_792.png" />
+    <None Include="Core\Resource\Images\Sprites\b_791.png" />
+    <None Include="Core\Resource\Images\Sprites\b_790.png" />
+    <None Include="Core\Resource\Images\Sprites\b_789.png" />
+    <None Include="Core\Resource\Images\Sprites\b_788.png" />
+    <None Include="Core\Resource\Images\Sprites\b_787.png" />
+    <None Include="Core\Resource\Images\Sprites\b_786.png" />
+    <None Include="Core\Resource\Images\Sprites\b_785.png" />
+    <None Include="Core\Resource\Images\Sprites\b_784.png" />
+    <None Include="Core\Resource\Images\Sprites\b_783.png" />
+    <None Include="Core\Resource\Images\Sprites\b_782.png" />
+    <None Include="Core\Resource\Images\Sprites\b_781.png" />
+    <None Include="Core\Resource\Images\Sprites\b_780.png" />
+    <None Include="Core\Resource\Images\Sprites\b_779.png" />
+    <None Include="Core\Resource\Images\Sprites\b_778.png" />
+    <None Include="Core\Resource\Images\Sprites\b_777.png" />
+    <None Include="Core\Resource\Images\Sprites\b_776.png" />
+    <None Include="Core\Resource\Images\Sprites\b_775.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_774.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-17.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-16.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-15.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-14.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_773.png" />
+    <None Include="Core\Resource\Images\Sprites\b_772.png" />
+    <None Include="Core\Resource\Images\Sprites\b_771.png" />
+    <None Include="Core\Resource\Images\Sprites\b_770.png" />
+    <None Include="Core\Resource\Images\Sprites\b_769.png" />
+    <None Include="Core\Resource\Images\Sprites\b_768.png" />
+    <None Include="Core\Resource\Images\Sprites\b_767.png" />
+    <None Include="Core\Resource\Images\Sprites\b_766.png" />
+    <None Include="Core\Resource\Images\Sprites\b_765.png" />
+    <None Include="Core\Resource\Images\Sprites\b_764.png" />
+    <None Include="Core\Resource\Images\Sprites\b_763.png" />
+    <None Include="Core\Resource\Images\Sprites\b_762.png" />
+    <None Include="Core\Resource\Images\Sprites\b_761.png" />
+    <None Include="Core\Resource\Images\Sprites\b_760.png" />
+    <None Include="Core\Resource\Images\Sprites\b_759.png" />
+    <None Include="Core\Resource\Images\Sprites\b_758.png" />
+    <None Include="Core\Resource\Images\Sprites\b_757.png" />
+    <None Include="Core\Resource\Images\Sprites\b_756.png" />
+    <None Include="Core\Resource\Images\Sprites\b_755.png" />
+    <None Include="Core\Resource\Images\Sprites\b_754.png" />
+    <None Include="Core\Resource\Images\Sprites\b_753.png" />
+    <None Include="Core\Resource\Images\Sprites\b_752.png" />
+    <None Include="Core\Resource\Images\Sprites\b_751.png" />
+    <None Include="Core\Resource\Images\Sprites\b_750.png" />
+    <None Include="Core\Resource\Images\Sprites\b_749.png" />
+    <None Include="Core\Resource\Images\Sprites\b_748.png" />
+    <None Include="Core\Resource\Images\Sprites\b_747.png" />
+    <None Include="Core\Resource\Images\Sprites\b_746-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_746.png" />
+    <None Include="Core\Resource\Images\Sprites\b_745-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_745-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_745.png" />
+    <None Include="Core\Resource\Images\Sprites\b_744.png" />
+    <None Include="Core\Resource\Images\Sprites\b_743.png" />
+    <None Include="Core\Resource\Images\Sprites\b_742.png" />
+    <None Include="Core\Resource\Images\Sprites\b_741-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_741-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_741-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_741.png" />
+    <None Include="Core\Resource\Images\Sprites\b_740.png" />
+    <None Include="Core\Resource\Images\Sprites\b_739.png" />
+    <None Include="Core\Resource\Images\Sprites\b_738.png" />
+    <None Include="Core\Resource\Images\Sprites\b_737.png" />
+    <None Include="Core\Resource\Images\Sprites\b_736.png" />
+    <None Include="Core\Resource\Images\Sprites\b_735.png" />
+    <None Include="Core\Resource\Images\Sprites\b_734.png" />
+    <None Include="Core\Resource\Images\Sprites\b_733.png" />
+    <None Include="Core\Resource\Images\Sprites\b_732.png" />
+    <None Include="Core\Resource\Images\Sprites\b_731.png" />
+    <None Include="Core\Resource\Images\Sprites\b_730.png" />
+    <None Include="Core\Resource\Images\Sprites\b_729.png" />
+    <None Include="Core\Resource\Images\Sprites\b_728.png" />
+    <None Include="Core\Resource\Images\Sprites\b_727.png" />
+    <None Include="Core\Resource\Images\Sprites\b_726.png" />
+    <None Include="Core\Resource\Images\Sprites\b_725.png" />
+    <None Include="Core\Resource\Images\Sprites\b_724.png" />
+    <None Include="Core\Resource\Images\Sprites\b_723.png" />
+    <None Include="Core\Resource\Images\Sprites\b_722.png" />
+    <None Include="Core\Resource\Images\Sprites\b_721.png" />
+    <None Include="Core\Resource\Images\Sprites\b_720-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_720.png" />
+    <None Include="Core\Resource\Images\Sprites\b_719-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_719.png" />
+    <None Include="Core\Resource\Images\Sprites\b_718-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_718-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_718-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_718-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_718.png" />
+    <None Include="Core\Resource\Images\Sprites\b_717.png" />
+    <None Include="Core\Resource\Images\Sprites\b_716-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_716.png" />
+    <None Include="Core\Resource\Images\Sprites\b_715.png" />
+    <None Include="Core\Resource\Images\Sprites\b_714.png" />
+    <None Include="Core\Resource\Images\Sprites\b_713.png" />
+    <None Include="Core\Resource\Images\Sprites\b_712.png" />
+    <None Include="Core\Resource\Images\Sprites\b_711-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_711-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_711-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_711.png" />
+    <None Include="Core\Resource\Images\Sprites\b_710-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_710-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_710-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_710.png" />
+    <None Include="Core\Resource\Images\Sprites\b_709.png" />
+    <None Include="Core\Resource\Images\Sprites\b_708.png" />
+    <None Include="Core\Resource\Images\Sprites\b_707.png" />
+    <None Include="Core\Resource\Images\Sprites\b_706.png" />
+    <None Include="Core\Resource\Images\Sprites\b_705.png" />
+    <None Include="Core\Resource\Images\Sprites\b_704.png" />
+    <None Include="Core\Resource\Images\Sprites\b_703.png" />
+    <None Include="Core\Resource\Images\Sprites\b_702.png" />
+    <None Include="Core\Resource\Images\Sprites\b_701.png" />
+    <None Include="Core\Resource\Images\Sprites\b_700.png" />
+    <None Include="Core\Resource\Images\Sprites\b_699.png" />
+    <None Include="Core\Resource\Images\Sprites\b_698.png" />
+    <None Include="Core\Resource\Images\Sprites\b_697.png" />
+    <None Include="Core\Resource\Images\Sprites\b_696.png" />
+    <None Include="Core\Resource\Images\Sprites\b_695.png" />
+    <None Include="Core\Resource\Images\Sprites\b_694.png" />
+    <None Include="Core\Resource\Images\Sprites\b_693.png" />
+    <None Include="Core\Resource\Images\Sprites\b_692.png" />
+    <None Include="Core\Resource\Images\Sprites\b_691.png" />
+    <None Include="Core\Resource\Images\Sprites\b_690.png" />
+    <None Include="Core\Resource\Images\Sprites\b_689.png" />
+    <None Include="Core\Resource\Images\Sprites\b_688.png" />
+    <None Include="Core\Resource\Images\Sprites\b_687.png" />
+    <None Include="Core\Resource\Images\Sprites\b_686.png" />
+    <None Include="Core\Resource\Images\Sprites\b_685.png" />
+    <None Include="Core\Resource\Images\Sprites\b_684.png" />
+    <None Include="Core\Resource\Images\Sprites\b_683.png" />
+    <None Include="Core\Resource\Images\Sprites\b_682.png" />
+    <None Include="Core\Resource\Images\Sprites\b_681-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_681.png" />
+    <None Include="Core\Resource\Images\Sprites\b_680.png" />
+    <None Include="Core\Resource\Images\Sprites\b_679.png" />
+    <None Include="Core\Resource\Images\Sprites\b_678-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_678.png" />
+    <None Include="Core\Resource\Images\Sprites\b_677.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_676.png" />
+    <None Include="Core\Resource\Images\Sprites\b_675.png" />
+    <None Include="Core\Resource\Images\Sprites\b_674.png" />
+    <None Include="Core\Resource\Images\Sprites\b_673.png" />
+    <None Include="Core\Resource\Images\Sprites\b_672.png" />
+    <None Include="Core\Resource\Images\Sprites\b_671-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_671-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_671-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_671-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_671.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_670.png" />
+    <None Include="Core\Resource\Images\Sprites\b_669-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_669-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_669-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_669-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_669.png" />
+    <None Include="Core\Resource\Images\Sprites\b_668f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_668.png" />
+    <None Include="Core\Resource\Images\Sprites\b_667.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-19.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-18.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-17.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-16.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-15.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-14.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_666.png" />
+    <None Include="Core\Resource\Images\Sprites\b_665.png" />
+    <None Include="Core\Resource\Images\Sprites\b_664.png" />
+    <None Include="Core\Resource\Images\Sprites\b_663.png" />
+    <None Include="Core\Resource\Images\Sprites\b_662.png" />
+    <None Include="Core\Resource\Images\Sprites\b_661.png" />
+    <None Include="Core\Resource\Images\Sprites\b_660.png" />
+    <None Include="Core\Resource\Images\Sprites\b_659.png" />
+    <None Include="Core\Resource\Images\Sprites\b_658-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_658-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_658.png" />
+    <None Include="Core\Resource\Images\Sprites\b_657.png" />
+    <None Include="Core\Resource\Images\Sprites\b_656.png" />
+    <None Include="Core\Resource\Images\Sprites\b_655.png" />
+    <None Include="Core\Resource\Images\Sprites\b_654.png" />
+    <None Include="Core\Resource\Images\Sprites\b_653.png" />
+    <None Include="Core\Resource\Images\Sprites\b_652.png" />
+    <None Include="Core\Resource\Images\Sprites\b_651.png" />
+    <None Include="Core\Resource\Images\Sprites\b_650.png" />
+    <None Include="Core\Resource\Images\Sprites\b_649-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_649-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_649-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_649-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_649.png" />
+    <None Include="Core\Resource\Images\Sprites\b_648-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_648.png" />
+    <None Include="Core\Resource\Images\Sprites\b_647-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_647.png" />
+    <None Include="Core\Resource\Images\Sprites\b_646-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_646-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_646.png" />
+    <None Include="Core\Resource\Images\Sprites\b_645-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_645.png" />
+    <None Include="Core\Resource\Images\Sprites\b_644.png" />
+    <None Include="Core\Resource\Images\Sprites\b_643.png" />
+    <None Include="Core\Resource\Images\Sprites\b_642-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_642.png" />
+    <None Include="Core\Resource\Images\Sprites\b_641-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_641.png" />
+    <None Include="Core\Resource\Images\Sprites\b_640.png" />
+    <None Include="Core\Resource\Images\Sprites\b_639.png" />
+    <None Include="Core\Resource\Images\Sprites\b_638.png" />
+    <None Include="Core\Resource\Images\Sprites\b_637.png" />
+    <None Include="Core\Resource\Images\Sprites\b_636.png" />
+    <None Include="Core\Resource\Images\Sprites\b_635.png" />
+    <None Include="Core\Resource\Images\Sprites\b_634.png" />
+    <None Include="Core\Resource\Images\Sprites\b_633.png" />
+    <None Include="Core\Resource\Images\Sprites\b_632.png" />
+    <None Include="Core\Resource\Images\Sprites\b_631.png" />
+    <None Include="Core\Resource\Images\Sprites\b_630.png" />
+    <None Include="Core\Resource\Images\Sprites\b_629.png" />
+    <None Include="Core\Resource\Images\Sprites\b_628.png" />
+    <None Include="Core\Resource\Images\Sprites\b_627.png" />
+    <None Include="Core\Resource\Images\Sprites\b_626.png" />
+    <None Include="Core\Resource\Images\Sprites\b_625.png" />
+    <None Include="Core\Resource\Images\Sprites\b_624.png" />
+    <None Include="Core\Resource\Images\Sprites\b_623.png" />
+    <None Include="Core\Resource\Images\Sprites\b_622.png" />
+    <None Include="Core\Resource\Images\Sprites\b_621.png" />
+    <None Include="Core\Resource\Images\Sprites\b_620.png" />
+    <None Include="Core\Resource\Images\Sprites\b_619.png" />
+    <None Include="Core\Resource\Images\Sprites\b_618-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_618.png" />
+    <None Include="Core\Resource\Images\Sprites\b_617.png" />
+    <None Include="Core\Resource\Images\Sprites\b_616.png" />
+    <None Include="Core\Resource\Images\Sprites\b_615.png" />
+    <None Include="Core\Resource\Images\Sprites\b_614.png" />
+    <None Include="Core\Resource\Images\Sprites\b_613.png" />
+    <None Include="Core\Resource\Images\Sprites\b_612.png" />
+    <None Include="Core\Resource\Images\Sprites\b_611.png" />
+    <None Include="Core\Resource\Images\Sprites\b_610.png" />
+    <None Include="Core\Resource\Images\Sprites\b_609.png" />
+    <None Include="Core\Resource\Images\Sprites\b_608.png" />
+    <None Include="Core\Resource\Images\Sprites\b_607.png" />
+    <None Include="Core\Resource\Images\Sprites\b_606.png" />
+    <None Include="Core\Resource\Images\Sprites\b_605.png" />
+    <None Include="Core\Resource\Images\Sprites\b_604.png" />
+    <None Include="Core\Resource\Images\Sprites\b_603.png" />
+    <None Include="Core\Resource\Images\Sprites\b_602.png" />
+    <None Include="Core\Resource\Images\Sprites\b_601.png" />
+    <None Include="Core\Resource\Images\Sprites\b_600.png" />
+    <None Include="Core\Resource\Images\Sprites\b_599.png" />
+    <None Include="Core\Resource\Images\Sprites\b_598.png" />
+    <None Include="Core\Resource\Images\Sprites\b_597.png" />
+    <None Include="Core\Resource\Images\Sprites\b_596.png" />
+    <None Include="Core\Resource\Images\Sprites\b_595.png" />
+    <None Include="Core\Resource\Images\Sprites\b_594.png" />
+    <None Include="Core\Resource\Images\Sprites\b_593f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_593.png" />
+    <None Include="Core\Resource\Images\Sprites\b_592f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_592.png" />
+    <None Include="Core\Resource\Images\Sprites\b_591.png" />
+    <None Include="Core\Resource\Images\Sprites\b_590.png" />
+    <None Include="Core\Resource\Images\Sprites\b_589.png" />
+    <None Include="Core\Resource\Images\Sprites\b_588.png" />
+    <None Include="Core\Resource\Images\Sprites\b_587.png" />
+    <None Include="Core\Resource\Images\Sprites\b_586-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_586-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_586-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_586.png" />
+    <None Include="Core\Resource\Images\Sprites\b_585-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_585-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_585-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_585.png" />
+    <None Include="Core\Resource\Images\Sprites\b_584.png" />
+    <None Include="Core\Resource\Images\Sprites\b_583.png" />
+    <None Include="Core\Resource\Images\Sprites\b_582.png" />
+    <None Include="Core\Resource\Images\Sprites\b_581.png" />
+    <None Include="Core\Resource\Images\Sprites\b_580.png" />
+    <None Include="Core\Resource\Images\Sprites\b_579.png" />
+    <None Include="Core\Resource\Images\Sprites\b_578.png" />
+    <None Include="Core\Resource\Images\Sprites\b_577.png" />
+    <None Include="Core\Resource\Images\Sprites\b_576.png" />
+    <None Include="Core\Resource\Images\Sprites\b_575.png" />
+    <None Include="Core\Resource\Images\Sprites\b_574.png" />
+    <None Include="Core\Resource\Images\Sprites\b_573.png" />
+    <None Include="Core\Resource\Images\Sprites\b_572.png" />
+    <None Include="Core\Resource\Images\Sprites\b_571.png" />
+    <None Include="Core\Resource\Images\Sprites\b_570.png" />
+    <None Include="Core\Resource\Images\Sprites\b_569-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_569.png" />
+    <None Include="Core\Resource\Images\Sprites\b_568.png" />
+    <None Include="Core\Resource\Images\Sprites\b_567.png" />
+    <None Include="Core\Resource\Images\Sprites\b_566.png" />
+    <None Include="Core\Resource\Images\Sprites\b_565.png" />
+    <None Include="Core\Resource\Images\Sprites\b_564.png" />
+    <None Include="Core\Resource\Images\Sprites\b_563.png" />
+    <None Include="Core\Resource\Images\Sprites\b_562-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_562.png" />
+    <None Include="Core\Resource\Images\Sprites\b_561.png" />
+    <None Include="Core\Resource\Images\Sprites\b_560.png" />
+    <None Include="Core\Resource\Images\Sprites\b_559.png" />
+    <None Include="Core\Resource\Images\Sprites\b_558.png" />
+    <None Include="Core\Resource\Images\Sprites\b_557.png" />
+    <None Include="Core\Resource\Images\Sprites\b_556.png" />
+    <None Include="Core\Resource\Images\Sprites\b_555-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_555-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_555-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_555.png" />
+    <None Include="Core\Resource\Images\Sprites\b_554-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_554.png" />
+    <None Include="Core\Resource\Images\Sprites\b_553.png" />
+    <None Include="Core\Resource\Images\Sprites\b_552.png" />
+    <None Include="Core\Resource\Images\Sprites\b_551.png" />
+    <None Include="Core\Resource\Images\Sprites\b_550-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_550.png" />
+    <None Include="Core\Resource\Images\Sprites\b_549.png" />
+    <None Include="Core\Resource\Images\Sprites\b_548.png" />
+    <None Include="Core\Resource\Images\Sprites\b_547.png" />
+    <None Include="Core\Resource\Images\Sprites\b_546.png" />
+    <None Include="Core\Resource\Images\Sprites\b_545.png" />
+    <None Include="Core\Resource\Images\Sprites\b_544.png" />
+    <None Include="Core\Resource\Images\Sprites\b_543.png" />
+    <None Include="Core\Resource\Images\Sprites\b_542.png" />
+    <None Include="Core\Resource\Images\Sprites\b_541.png" />
+    <None Include="Core\Resource\Images\Sprites\b_540.png" />
+    <None Include="Core\Resource\Images\Sprites\b_539.png" />
+    <None Include="Core\Resource\Images\Sprites\b_538.png" />
+    <None Include="Core\Resource\Images\Sprites\b_537.png" />
+    <None Include="Core\Resource\Images\Sprites\b_536.png" />
+    <None Include="Core\Resource\Images\Sprites\b_535.png" />
+    <None Include="Core\Resource\Images\Sprites\b_534.png" />
+    <None Include="Core\Resource\Images\Sprites\b_533.png" />
+    <None Include="Core\Resource\Images\Sprites\b_532.png" />
+    <None Include="Core\Resource\Images\Sprites\b_531-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_531.png" />
+    <None Include="Core\Resource\Images\Sprites\b_530.png" />
+    <None Include="Core\Resource\Images\Sprites\b_529.png" />
+    <None Include="Core\Resource\Images\Sprites\b_528.png" />
+    <None Include="Core\Resource\Images\Sprites\b_527.png" />
+    <None Include="Core\Resource\Images\Sprites\b_526.png" />
+    <None Include="Core\Resource\Images\Sprites\b_525.png" />
+    <None Include="Core\Resource\Images\Sprites\b_524.png" />
+    <None Include="Core\Resource\Images\Sprites\b_523.png" />
+    <None Include="Core\Resource\Images\Sprites\b_522.png" />
+    <None Include="Core\Resource\Images\Sprites\b_521f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_521.png" />
+    <None Include="Core\Resource\Images\Sprites\b_520.png" />
+    <None Include="Core\Resource\Images\Sprites\b_519.png" />
+    <None Include="Core\Resource\Images\Sprites\b_518.png" />
+    <None Include="Core\Resource\Images\Sprites\b_517.png" />
+    <None Include="Core\Resource\Images\Sprites\b_516.png" />
+    <None Include="Core\Resource\Images\Sprites\b_515.png" />
+    <None Include="Core\Resource\Images\Sprites\b_514.png" />
+    <None Include="Core\Resource\Images\Sprites\b_513.png" />
+    <None Include="Core\Resource\Images\Sprites\b_512.png" />
+    <None Include="Core\Resource\Images\Sprites\b_511.png" />
+    <None Include="Core\Resource\Images\Sprites\b_510.png" />
+    <None Include="Core\Resource\Images\Sprites\b_509.png" />
+    <None Include="Core\Resource\Images\Sprites\b_508.png" />
+    <None Include="Core\Resource\Images\Sprites\b_507.png" />
+    <None Include="Core\Resource\Images\Sprites\b_506.png" />
+    <None Include="Core\Resource\Images\Sprites\b_505.png" />
+    <None Include="Core\Resource\Images\Sprites\b_504.png" />
+    <None Include="Core\Resource\Images\Sprites\b_503.png" />
+    <None Include="Core\Resource\Images\Sprites\b_502.png" />
+    <None Include="Core\Resource\Images\Sprites\b_501.png" />
+    <None Include="Core\Resource\Images\Sprites\b_500.png" />
+    <None Include="Core\Resource\Images\Sprites\b_499.png" />
+    <None Include="Core\Resource\Images\Sprites\b_498.png" />
+    <None Include="Core\Resource\Images\Sprites\b_497.png" />
+    <None Include="Core\Resource\Images\Sprites\b_496.png" />
+    <None Include="Core\Resource\Images\Sprites\b_495.png" />
+    <None Include="Core\Resource\Images\Sprites\b_494.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-17.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-16.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-15.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-14.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_493.png" />
+    <None Include="Core\Resource\Images\Sprites\b_492-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_492.png" />
+    <None Include="Core\Resource\Images\Sprites\b_491.png" />
+    <None Include="Core\Resource\Images\Sprites\b_490-e.png" />
+    <None Include="Core\Resource\Images\Sprites\b_490.png" />
+    <None Include="Core\Resource\Images\Sprites\b_489.png" />
+    <None Include="Core\Resource\Images\Sprites\b_488.png" />
+    <None Include="Core\Resource\Images\Sprites\b_487-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_487.png" />
+    <None Include="Core\Resource\Images\Sprites\b_486.png" />
+    <None Include="Core\Resource\Images\Sprites\b_485.png" />
+    <None Include="Core\Resource\Images\Sprites\b_484.png" />
+    <None Include="Core\Resource\Images\Sprites\b_483.png" />
+    <None Include="Core\Resource\Images\Sprites\b_482.png" />
+    <None Include="Core\Resource\Images\Sprites\b_481.png" />
+    <None Include="Core\Resource\Images\Sprites\b_480.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_479.png" />
+    <None Include="Core\Resource\Images\Sprites\b_478.png" />
+    <None Include="Core\Resource\Images\Sprites\b_477.png" />
+    <None Include="Core\Resource\Images\Sprites\b_476.png" />
+    <None Include="Core\Resource\Images\Sprites\b_475-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_475.png" />
+    <None Include="Core\Resource\Images\Sprites\b_474.png" />
+    <None Include="Core\Resource\Images\Sprites\b_473.png" />
+    <None Include="Core\Resource\Images\Sprites\b_472.png" />
+    <None Include="Core\Resource\Images\Sprites\b_471.png" />
+    <None Include="Core\Resource\Images\Sprites\b_470.png" />
+    <None Include="Core\Resource\Images\Sprites\b_469.png" />
+    <None Include="Core\Resource\Images\Sprites\b_468.png" />
+    <None Include="Core\Resource\Images\Sprites\b_467.png" />
+    <None Include="Core\Resource\Images\Sprites\b_466.png" />
+    <None Include="Core\Resource\Images\Sprites\b_465.png" />
+    <None Include="Core\Resource\Images\Sprites\b_464.png" />
+    <None Include="Core\Resource\Images\Sprites\b_463.png" />
+    <None Include="Core\Resource\Images\Sprites\b_462.png" />
+    <None Include="Core\Resource\Images\Sprites\b_461.png" />
+    <None Include="Core\Resource\Images\Sprites\b_460-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_460.png" />
+    <None Include="Core\Resource\Images\Sprites\b_459.png" />
+    <None Include="Core\Resource\Images\Sprites\b_458.png" />
+    <None Include="Core\Resource\Images\Sprites\b_457.png" />
+    <None Include="Core\Resource\Images\Sprites\b_456.png" />
+    <None Include="Core\Resource\Images\Sprites\b_455.png" />
+    <None Include="Core\Resource\Images\Sprites\b_454.png" />
+    <None Include="Core\Resource\Images\Sprites\b_453.png" />
+    <None Include="Core\Resource\Images\Sprites\b_452.png" />
+    <None Include="Core\Resource\Images\Sprites\b_451.png" />
+    <None Include="Core\Resource\Images\Sprites\b_450f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_450.png" />
+    <None Include="Core\Resource\Images\Sprites\b_449f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_449.png" />
+    <None Include="Core\Resource\Images\Sprites\b_448-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_448.png" />
+    <None Include="Core\Resource\Images\Sprites\b_447.png" />
+    <None Include="Core\Resource\Images\Sprites\b_446.png" />
+    <None Include="Core\Resource\Images\Sprites\b_445-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_445.png" />
+    <None Include="Core\Resource\Images\Sprites\b_444.png" />
+    <None Include="Core\Resource\Images\Sprites\b_443.png" />
+    <None Include="Core\Resource\Images\Sprites\b_442.png" />
+    <None Include="Core\Resource\Images\Sprites\b_441.png" />
+    <None Include="Core\Resource\Images\Sprites\b_440.png" />
+    <None Include="Core\Resource\Images\Sprites\b_439.png" />
+    <None Include="Core\Resource\Images\Sprites\b_438.png" />
+    <None Include="Core\Resource\Images\Sprites\b_437.png" />
+    <None Include="Core\Resource\Images\Sprites\b_436.png" />
+    <None Include="Core\Resource\Images\Sprites\b_435.png" />
+    <None Include="Core\Resource\Images\Sprites\b_434.png" />
+    <None Include="Core\Resource\Images\Sprites\b_433.png" />
+    <None Include="Core\Resource\Images\Sprites\b_432.png" />
+    <None Include="Core\Resource\Images\Sprites\b_431.png" />
+    <None Include="Core\Resource\Images\Sprites\b_430.png" />
+    <None Include="Core\Resource\Images\Sprites\b_429.png" />
+    <None Include="Core\Resource\Images\Sprites\b_428-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_428.png" />
+    <None Include="Core\Resource\Images\Sprites\b_427.png" />
+    <None Include="Core\Resource\Images\Sprites\b_426.png" />
+    <None Include="Core\Resource\Images\Sprites\b_425.png" />
+    <None Include="Core\Resource\Images\Sprites\b_424.png" />
+    <None Include="Core\Resource\Images\Sprites\b_423-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_423.png" />
+    <None Include="Core\Resource\Images\Sprites\b_422-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_422.png" />
+    <None Include="Core\Resource\Images\Sprites\b_421-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_421.png" />
+    <None Include="Core\Resource\Images\Sprites\b_420.png" />
+    <None Include="Core\Resource\Images\Sprites\b_419.png" />
+    <None Include="Core\Resource\Images\Sprites\b_418.png" />
+    <None Include="Core\Resource\Images\Sprites\b_417.png" />
+    <None Include="Core\Resource\Images\Sprites\b_416.png" />
+    <None Include="Core\Resource\Images\Sprites\b_415.png" />
+    <None Include="Core\Resource\Images\Sprites\b_414.png" />
+    <None Include="Core\Resource\Images\Sprites\b_413-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_413-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_413.png" />
+    <None Include="Core\Resource\Images\Sprites\b_412-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_412-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_412.png" />
+    <None Include="Core\Resource\Images\Sprites\b_411.png" />
+    <None Include="Core\Resource\Images\Sprites\b_410.png" />
+    <None Include="Core\Resource\Images\Sprites\b_409.png" />
+    <None Include="Core\Resource\Images\Sprites\b_408.png" />
+    <None Include="Core\Resource\Images\Sprites\b_407.png" />
+    <None Include="Core\Resource\Images\Sprites\b_406.png" />
+    <None Include="Core\Resource\Images\Sprites\b_405.png" />
+    <None Include="Core\Resource\Images\Sprites\b_404.png" />
+    <None Include="Core\Resource\Images\Sprites\b_403.png" />
+    <None Include="Core\Resource\Images\Sprites\b_402.png" />
+    <None Include="Core\Resource\Images\Sprites\b_401.png" />
+    <None Include="Core\Resource\Images\Sprites\b_400.png" />
+    <None Include="Core\Resource\Images\Sprites\b_399.png" />
+    <None Include="Core\Resource\Images\Sprites\b_398.png" />
+    <None Include="Core\Resource\Images\Sprites\b_397.png" />
+    <None Include="Core\Resource\Images\Sprites\b_396.png" />
+    <None Include="Core\Resource\Images\Sprites\b_395.png" />
+    <None Include="Core\Resource\Images\Sprites\b_394.png" />
+    <None Include="Core\Resource\Images\Sprites\b_393.png" />
+    <None Include="Core\Resource\Images\Sprites\b_392.png" />
+    <None Include="Core\Resource\Images\Sprites\b_391.png" />
+    <None Include="Core\Resource\Images\Sprites\b_390.png" />
+    <None Include="Core\Resource\Images\Sprites\b_389.png" />
+    <None Include="Core\Resource\Images\Sprites\b_388.png" />
+    <None Include="Core\Resource\Images\Sprites\b_387.png" />
+    <None Include="Core\Resource\Images\Sprites\b_386-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_386-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_386-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_386.png" />
+    <None Include="Core\Resource\Images\Sprites\b_385.png" />
+    <None Include="Core\Resource\Images\Sprites\b_384-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_384.png" />
+    <None Include="Core\Resource\Images\Sprites\b_383-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_383.png" />
+    <None Include="Core\Resource\Images\Sprites\b_382-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_382.png" />
+    <None Include="Core\Resource\Images\Sprites\b_381-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_381.png" />
+    <None Include="Core\Resource\Images\Sprites\b_380-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_380.png" />
+    <None Include="Core\Resource\Images\Sprites\b_379.png" />
+    <None Include="Core\Resource\Images\Sprites\b_378.png" />
+    <None Include="Core\Resource\Images\Sprites\b_377.png" />
+    <None Include="Core\Resource\Images\Sprites\b_376-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_376.png" />
+    <None Include="Core\Resource\Images\Sprites\b_375.png" />
+    <None Include="Core\Resource\Images\Sprites\b_374.png" />
+    <None Include="Core\Resource\Images\Sprites\b_373-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_373.png" />
+    <None Include="Core\Resource\Images\Sprites\b_372.png" />
+    <None Include="Core\Resource\Images\Sprites\b_371.png" />
+    <None Include="Core\Resource\Images\Sprites\b_370.png" />
+    <None Include="Core\Resource\Images\Sprites\b_369.png" />
+    <None Include="Core\Resource\Images\Sprites\b_368.png" />
+    <None Include="Core\Resource\Images\Sprites\b_367.png" />
+    <None Include="Core\Resource\Images\Sprites\b_366.png" />
+    <None Include="Core\Resource\Images\Sprites\b_365.png" />
+    <None Include="Core\Resource\Images\Sprites\b_364.png" />
+    <None Include="Core\Resource\Images\Sprites\b_363.png" />
+    <None Include="Core\Resource\Images\Sprites\b_362-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_362.png" />
+    <None Include="Core\Resource\Images\Sprites\b_361.png" />
+    <None Include="Core\Resource\Images\Sprites\b_360.png" />
+    <None Include="Core\Resource\Images\Sprites\b_359-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_359.png" />
+    <None Include="Core\Resource\Images\Sprites\b_358.png" />
+    <None Include="Core\Resource\Images\Sprites\b_357.png" />
+    <None Include="Core\Resource\Images\Sprites\b_356.png" />
+    <None Include="Core\Resource\Images\Sprites\b_355.png" />
+    <None Include="Core\Resource\Images\Sprites\b_354-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_354.png" />
+    <None Include="Core\Resource\Images\Sprites\b_353.png" />
+    <None Include="Core\Resource\Images\Sprites\b_352.png" />
+    <None Include="Core\Resource\Images\Sprites\b_351-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_351-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_351-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_351.png" />
+    <None Include="Core\Resource\Images\Sprites\b_350.png" />
+    <None Include="Core\Resource\Images\Sprites\b_349.png" />
+    <None Include="Core\Resource\Images\Sprites\b_348.png" />
+    <None Include="Core\Resource\Images\Sprites\b_347.png" />
+    <None Include="Core\Resource\Images\Sprites\b_346.png" />
+    <None Include="Core\Resource\Images\Sprites\b_345.png" />
+    <None Include="Core\Resource\Images\Sprites\b_344.png" />
+    <None Include="Core\Resource\Images\Sprites\b_343.png" />
+    <None Include="Core\Resource\Images\Sprites\b_342.png" />
+    <None Include="Core\Resource\Images\Sprites\b_341.png" />
+    <None Include="Core\Resource\Images\Sprites\b_340.png" />
+    <None Include="Core\Resource\Images\Sprites\b_339.png" />
+    <None Include="Core\Resource\Images\Sprites\b_338.png" />
+    <None Include="Core\Resource\Images\Sprites\b_337.png" />
+    <None Include="Core\Resource\Images\Sprites\b_336.png" />
+    <None Include="Core\Resource\Images\Sprites\b_335.png" />
+    <None Include="Core\Resource\Images\Sprites\b_334-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_334.png" />
+    <None Include="Core\Resource\Images\Sprites\b_333.png" />
+    <None Include="Core\Resource\Images\Sprites\b_332.png" />
+    <None Include="Core\Resource\Images\Sprites\b_331.png" />
+    <None Include="Core\Resource\Images\Sprites\b_330.png" />
+    <None Include="Core\Resource\Images\Sprites\b_329.png" />
+    <None Include="Core\Resource\Images\Sprites\b_328.png" />
+    <None Include="Core\Resource\Images\Sprites\b_327.png" />
+    <None Include="Core\Resource\Images\Sprites\b_326.png" />
+    <None Include="Core\Resource\Images\Sprites\b_325.png" />
+    <None Include="Core\Resource\Images\Sprites\b_324.png" />
+    <None Include="Core\Resource\Images\Sprites\b_323-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_323.png" />
+    <None Include="Core\Resource\Images\Sprites\b_322.png" />
+    <None Include="Core\Resource\Images\Sprites\b_321.png" />
+    <None Include="Core\Resource\Images\Sprites\b_320.png" />
+    <None Include="Core\Resource\Images\Sprites\b_319-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_319.png" />
+    <None Include="Core\Resource\Images\Sprites\b_318.png" />
+    <None Include="Core\Resource\Images\Sprites\b_317.png" />
+    <None Include="Core\Resource\Images\Sprites\b_316.png" />
+    <None Include="Core\Resource\Images\Sprites\b_315.png" />
+    <None Include="Core\Resource\Images\Sprites\b_314.png" />
+    <None Include="Core\Resource\Images\Sprites\b_313.png" />
+    <None Include="Core\Resource\Images\Sprites\b_312.png" />
+    <None Include="Core\Resource\Images\Sprites\b_311.png" />
+    <None Include="Core\Resource\Images\Sprites\b_310-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_310.png" />
+    <None Include="Core\Resource\Images\Sprites\b_309.png" />
+    <None Include="Core\Resource\Images\Sprites\b_308-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_308.png" />
+    <None Include="Core\Resource\Images\Sprites\b_307.png" />
+    <None Include="Core\Resource\Images\Sprites\b_306-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_306.png" />
+    <None Include="Core\Resource\Images\Sprites\b_305.png" />
+    <None Include="Core\Resource\Images\Sprites\b_304.png" />
+    <None Include="Core\Resource\Images\Sprites\b_303-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_303.png" />
+    <None Include="Core\Resource\Images\Sprites\b_302-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_302.png" />
+    <None Include="Core\Resource\Images\Sprites\b_301.png" />
+    <None Include="Core\Resource\Images\Sprites\b_300.png" />
+    <None Include="Core\Resource\Images\Sprites\b_299.png" />
+    <None Include="Core\Resource\Images\Sprites\b_298.png" />
+    <None Include="Core\Resource\Images\Sprites\b_297.png" />
+    <None Include="Core\Resource\Images\Sprites\b_296.png" />
+    <None Include="Core\Resource\Images\Sprites\b_295.png" />
+    <None Include="Core\Resource\Images\Sprites\b_294.png" />
+    <None Include="Core\Resource\Images\Sprites\b_293.png" />
+    <None Include="Core\Resource\Images\Sprites\b_292.png" />
+    <None Include="Core\Resource\Images\Sprites\b_291.png" />
+    <None Include="Core\Resource\Images\Sprites\b_290.png" />
+    <None Include="Core\Resource\Images\Sprites\b_289.png" />
+    <None Include="Core\Resource\Images\Sprites\b_288.png" />
+    <None Include="Core\Resource\Images\Sprites\b_287.png" />
+    <None Include="Core\Resource\Images\Sprites\b_286.png" />
+    <None Include="Core\Resource\Images\Sprites\b_285.png" />
+    <None Include="Core\Resource\Images\Sprites\b_284.png" />
+    <None Include="Core\Resource\Images\Sprites\b_283.png" />
+    <None Include="Core\Resource\Images\Sprites\b_282-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_282.png" />
+    <None Include="Core\Resource\Images\Sprites\b_281.png" />
+    <None Include="Core\Resource\Images\Sprites\b_280.png" />
+    <None Include="Core\Resource\Images\Sprites\b_279.png" />
+    <None Include="Core\Resource\Images\Sprites\b_278.png" />
+    <None Include="Core\Resource\Images\Sprites\b_277.png" />
+    <None Include="Core\Resource\Images\Sprites\b_276.png" />
+    <None Include="Core\Resource\Images\Sprites\b_275.png" />
+    <None Include="Core\Resource\Images\Sprites\b_274.png" />
+    <None Include="Core\Resource\Images\Sprites\b_273.png" />
+    <None Include="Core\Resource\Images\Sprites\b_272.png" />
+    <None Include="Core\Resource\Images\Sprites\b_271.png" />
+    <None Include="Core\Resource\Images\Sprites\b_270.png" />
+    <None Include="Core\Resource\Images\Sprites\b_269.png" />
+    <None Include="Core\Resource\Images\Sprites\b_268.png" />
+    <None Include="Core\Resource\Images\Sprites\b_267.png" />
+    <None Include="Core\Resource\Images\Sprites\b_266.png" />
+    <None Include="Core\Resource\Images\Sprites\b_265.png" />
+    <None Include="Core\Resource\Images\Sprites\b_264-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_264.png" />
+    <None Include="Core\Resource\Images\Sprites\b_263-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_263.png" />
+    <None Include="Core\Resource\Images\Sprites\b_262.png" />
+    <None Include="Core\Resource\Images\Sprites\b_261.png" />
+    <None Include="Core\Resource\Images\Sprites\b_260-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_260.png" />
+    <None Include="Core\Resource\Images\Sprites\b_259.png" />
+    <None Include="Core\Resource\Images\Sprites\b_258.png" />
+    <None Include="Core\Resource\Images\Sprites\b_257-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_257.png" />
+    <None Include="Core\Resource\Images\Sprites\b_256.png" />
+    <None Include="Core\Resource\Images\Sprites\b_255.png" />
+    <None Include="Core\Resource\Images\Sprites\b_254-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_254.png" />
+    <None Include="Core\Resource\Images\Sprites\b_253.png" />
+    <None Include="Core\Resource\Images\Sprites\b_252.png" />
+    <None Include="Core\Resource\Images\Sprites\b_251.png" />
+    <None Include="Core\Resource\Images\Sprites\b_250.png" />
+    <None Include="Core\Resource\Images\Sprites\b_249x.png" />
+    <None Include="Core\Resource\Images\Sprites\b_249.png" />
+    <None Include="Core\Resource\Images\Sprites\b_248-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_248.png" />
+    <None Include="Core\Resource\Images\Sprites\b_247.png" />
+    <None Include="Core\Resource\Images\Sprites\b_246.png" />
+    <None Include="Core\Resource\Images\Sprites\b_245.png" />
+    <None Include="Core\Resource\Images\Sprites\b_244.png" />
+    <None Include="Core\Resource\Images\Sprites\b_243.png" />
+    <None Include="Core\Resource\Images\Sprites\b_242.png" />
+    <None Include="Core\Resource\Images\Sprites\b_241.png" />
+    <None Include="Core\Resource\Images\Sprites\b_240.png" />
+    <None Include="Core\Resource\Images\Sprites\b_239.png" />
+    <None Include="Core\Resource\Images\Sprites\b_238.png" />
+    <None Include="Core\Resource\Images\Sprites\b_237.png" />
+    <None Include="Core\Resource\Images\Sprites\b_236.png" />
+    <None Include="Core\Resource\Images\Sprites\b_235.png" />
+    <None Include="Core\Resource\Images\Sprites\b_234.png" />
+    <None Include="Core\Resource\Images\Sprites\b_233.png" />
+    <None Include="Core\Resource\Images\Sprites\b_232.png" />
+    <None Include="Core\Resource\Images\Sprites\b_231.png" />
+    <None Include="Core\Resource\Images\Sprites\b_230.png" />
+    <None Include="Core\Resource\Images\Sprites\b_229-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_229.png" />
+    <None Include="Core\Resource\Images\Sprites\b_228.png" />
+    <None Include="Core\Resource\Images\Sprites\b_227.png" />
+    <None Include="Core\Resource\Images\Sprites\b_226.png" />
+    <None Include="Core\Resource\Images\Sprites\b_225.png" />
+    <None Include="Core\Resource\Images\Sprites\b_224.png" />
+    <None Include="Core\Resource\Images\Sprites\b_223.png" />
+    <None Include="Core\Resource\Images\Sprites\b_222-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_222.png" />
+    <None Include="Core\Resource\Images\Sprites\b_221.png" />
+    <None Include="Core\Resource\Images\Sprites\b_220.png" />
+    <None Include="Core\Resource\Images\Sprites\b_219.png" />
+    <None Include="Core\Resource\Images\Sprites\b_218.png" />
+    <None Include="Core\Resource\Images\Sprites\b_217.png" />
+    <None Include="Core\Resource\Images\Sprites\b_216.png" />
+    <None Include="Core\Resource\Images\Sprites\b_215.png" />
+    <None Include="Core\Resource\Images\Sprites\b_214-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_214.png" />
+    <None Include="Core\Resource\Images\Sprites\b_213.png" />
+    <None Include="Core\Resource\Images\Sprites\b_212-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_212.png" />
+    <None Include="Core\Resource\Images\Sprites\b_211.png" />
+    <None Include="Core\Resource\Images\Sprites\b_210.png" />
+    <None Include="Core\Resource\Images\Sprites\b_209.png" />
+    <None Include="Core\Resource\Images\Sprites\b_208-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_208.png" />
+    <None Include="Core\Resource\Images\Sprites\b_207.png" />
+    <None Include="Core\Resource\Images\Sprites\b_206.png" />
+    <None Include="Core\Resource\Images\Sprites\b_205.png" />
+    <None Include="Core\Resource\Images\Sprites\b_204.png" />
+    <None Include="Core\Resource\Images\Sprites\b_203.png" />
+    <None Include="Core\Resource\Images\Sprites\b_202.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-27.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-26.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-25.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-24.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-23.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-22.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-21.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-20.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-19.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-18.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-17.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-16.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-15.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-14.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_201.png" />
+    <None Include="Core\Resource\Images\Sprites\b_200.png" />
+    <None Include="Core\Resource\Images\Sprites\b_199-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_199.png" />
+    <None Include="Core\Resource\Images\Sprites\b_198.png" />
+    <None Include="Core\Resource\Images\Sprites\b_197.png" />
+    <None Include="Core\Resource\Images\Sprites\b_196.png" />
+    <None Include="Core\Resource\Images\Sprites\b_195.png" />
+    <None Include="Core\Resource\Images\Sprites\b_194.png" />
+    <None Include="Core\Resource\Images\Sprites\b_193.png" />
+    <None Include="Core\Resource\Images\Sprites\b_192.png" />
+    <None Include="Core\Resource\Images\Sprites\b_191.png" />
+    <None Include="Core\Resource\Images\Sprites\b_190.png" />
+    <None Include="Core\Resource\Images\Sprites\b_189.png" />
+    <None Include="Core\Resource\Images\Sprites\b_188.png" />
+    <None Include="Core\Resource\Images\Sprites\b_187.png" />
+    <None Include="Core\Resource\Images\Sprites\b_186.png" />
+    <None Include="Core\Resource\Images\Sprites\b_185.png" />
+    <None Include="Core\Resource\Images\Sprites\b_184.png" />
+    <None Include="Core\Resource\Images\Sprites\b_183.png" />
+    <None Include="Core\Resource\Images\Sprites\b_182.png" />
+    <None Include="Core\Resource\Images\Sprites\b_181-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_181.png" />
+    <None Include="Core\Resource\Images\Sprites\b_180.png" />
+    <None Include="Core\Resource\Images\Sprites\b_179.png" />
+    <None Include="Core\Resource\Images\Sprites\b_178.png" />
+    <None Include="Core\Resource\Images\Sprites\b_177.png" />
+    <None Include="Core\Resource\Images\Sprites\b_176.png" />
+    <None Include="Core\Resource\Images\Sprites\b_175.png" />
+    <None Include="Core\Resource\Images\Sprites\b_174.png" />
+    <None Include="Core\Resource\Images\Sprites\b_173.png" />
+    <None Include="Core\Resource\Images\Sprites\b_172-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_172.png" />
+    <None Include="Core\Resource\Images\Sprites\b_171.png" />
+    <None Include="Core\Resource\Images\Sprites\b_170.png" />
+    <None Include="Core\Resource\Images\Sprites\b_169.png" />
+    <None Include="Core\Resource\Images\Sprites\b_168.png" />
+    <None Include="Core\Resource\Images\Sprites\b_167.png" />
+    <None Include="Core\Resource\Images\Sprites\b_166.png" />
+    <None Include="Core\Resource\Images\Sprites\b_165.png" />
+    <None Include="Core\Resource\Images\Sprites\b_164.png" />
+    <None Include="Core\Resource\Images\Sprites\b_163.png" />
+    <None Include="Core\Resource\Images\Sprites\b_162.png" />
+    <None Include="Core\Resource\Images\Sprites\b_161.png" />
+    <None Include="Core\Resource\Images\Sprites\b_160.png" />
+    <None Include="Core\Resource\Images\Sprites\b_159.png" />
+    <None Include="Core\Resource\Images\Sprites\b_158.png" />
+    <None Include="Core\Resource\Images\Sprites\b_157.png" />
+    <None Include="Core\Resource\Images\Sprites\b_156.png" />
+    <None Include="Core\Resource\Images\Sprites\b_155.png" />
+    <None Include="Core\Resource\Images\Sprites\b_154.png" />
+    <None Include="Core\Resource\Images\Sprites\b_153.png" />
+    <None Include="Core\Resource\Images\Sprites\b_152.png" />
+    <None Include="Core\Resource\Images\Sprites\b_151.png" />
+    <None Include="Core\Resource\Images\Sprites\b_150-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_150-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_150.png" />
+    <None Include="Core\Resource\Images\Sprites\b_149.png" />
+    <None Include="Core\Resource\Images\Sprites\b_148.png" />
+    <None Include="Core\Resource\Images\Sprites\b_147.png" />
+    <None Include="Core\Resource\Images\Sprites\b_146-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_146.png" />
+    <None Include="Core\Resource\Images\Sprites\b_145-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_145.png" />
+    <None Include="Core\Resource\Images\Sprites\b_144-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_144.png" />
+    <None Include="Core\Resource\Images\Sprites\b_143-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_143.png" />
+    <None Include="Core\Resource\Images\Sprites\b_142-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_142.png" />
+    <None Include="Core\Resource\Images\Sprites\b_141.png" />
+    <None Include="Core\Resource\Images\Sprites\b_140.png" />
+    <None Include="Core\Resource\Images\Sprites\b_139.png" />
+    <None Include="Core\Resource\Images\Sprites\b_138.png" />
+    <None Include="Core\Resource\Images\Sprites\b_137.png" />
+    <None Include="Core\Resource\Images\Sprites\b_136.png" />
+    <None Include="Core\Resource\Images\Sprites\b_135.png" />
+    <None Include="Core\Resource\Images\Sprites\b_134.png" />
+    <None Include="Core\Resource\Images\Sprites\b_133-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_133-1p.png" />
+    <None Include="Core\Resource\Images\Sprites\b_133.png" />
+    <None Include="Core\Resource\Images\Sprites\b_132.png" />
+    <None Include="Core\Resource\Images\Sprites\b_131-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_131.png" />
+    <None Include="Core\Resource\Images\Sprites\b_130-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_130.png" />
+    <None Include="Core\Resource\Images\Sprites\b_129.png" />
+    <None Include="Core\Resource\Images\Sprites\b_128.png" />
+    <None Include="Core\Resource\Images\Sprites\b_127-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_127.png" />
+    <None Include="Core\Resource\Images\Sprites\b_126.png" />
+    <None Include="Core\Resource\Images\Sprites\b_125.png" />
+    <None Include="Core\Resource\Images\Sprites\b_124.png" />
+    <None Include="Core\Resource\Images\Sprites\b_123.png" />
+    <None Include="Core\Resource\Images\Sprites\b_122-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_122.png" />
+    <None Include="Core\Resource\Images\Sprites\b_121.png" />
+    <None Include="Core\Resource\Images\Sprites\b_120.png" />
+    <None Include="Core\Resource\Images\Sprites\b_119.png" />
+    <None Include="Core\Resource\Images\Sprites\b_118.png" />
+    <None Include="Core\Resource\Images\Sprites\b_117.png" />
+    <None Include="Core\Resource\Images\Sprites\b_116.png" />
+    <None Include="Core\Resource\Images\Sprites\b_115-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_115.png" />
+    <None Include="Core\Resource\Images\Sprites\b_114.png" />
+    <None Include="Core\Resource\Images\Sprites\b_113.png" />
+    <None Include="Core\Resource\Images\Sprites\b_112.png" />
+    <None Include="Core\Resource\Images\Sprites\b_111.png" />
+    <None Include="Core\Resource\Images\Sprites\b_110-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_110.png" />
+    <None Include="Core\Resource\Images\Sprites\b_109.png" />
+    <None Include="Core\Resource\Images\Sprites\b_108.png" />
+    <None Include="Core\Resource\Images\Sprites\b_107.png" />
+    <None Include="Core\Resource\Images\Sprites\b_106.png" />
+    <None Include="Core\Resource\Images\Sprites\b_105-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_105.png" />
+    <None Include="Core\Resource\Images\Sprites\b_104.png" />
+    <None Include="Core\Resource\Images\Sprites\b_103-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_103.png" />
+    <None Include="Core\Resource\Images\Sprites\b_102.png" />
+    <None Include="Core\Resource\Images\Sprites\b_101.png" />
+    <None Include="Core\Resource\Images\Sprites\b_100.png" />
+    <None Include="Core\Resource\Images\Sprites\b_99-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_99.png" />
+    <None Include="Core\Resource\Images\Sprites\b_98.png" />
+    <None Include="Core\Resource\Images\Sprites\b_97.png" />
+    <None Include="Core\Resource\Images\Sprites\b_96.png" />
+    <None Include="Core\Resource\Images\Sprites\b_95.png" />
+    <None Include="Core\Resource\Images\Sprites\b_94-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_94-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_94.png" />
+    <None Include="Core\Resource\Images\Sprites\b_93.png" />
+    <None Include="Core\Resource\Images\Sprites\b_92.png" />
+    <None Include="Core\Resource\Images\Sprites\b_91.png" />
+    <None Include="Core\Resource\Images\Sprites\b_90.png" />
+    <None Include="Core\Resource\Images\Sprites\b_89-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_89.png" />
+    <None Include="Core\Resource\Images\Sprites\b_88-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_88.png" />
+    <None Include="Core\Resource\Images\Sprites\b_87.png" />
+    <None Include="Core\Resource\Images\Sprites\b_86.png" />
+    <None Include="Core\Resource\Images\Sprites\b_85.png" />
+    <None Include="Core\Resource\Images\Sprites\b_84.png" />
+    <None Include="Core\Resource\Images\Sprites\b_83-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_83.png" />
+    <None Include="Core\Resource\Images\Sprites\b_82.png" />
+    <None Include="Core\Resource\Images\Sprites\b_81.png" />
+    <None Include="Core\Resource\Images\Sprites\b_80-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_80-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_80.png" />
+    <None Include="Core\Resource\Images\Sprites\b_79-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_79.png" />
+    <None Include="Core\Resource\Images\Sprites\b_78-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_78.png" />
+    <None Include="Core\Resource\Images\Sprites\b_77-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_77.png" />
+    <None Include="Core\Resource\Images\Sprites\b_76-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_76.png" />
+    <None Include="Core\Resource\Images\Sprites\b_75-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_75.png" />
+    <None Include="Core\Resource\Images\Sprites\b_74-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_74.png" />
+    <None Include="Core\Resource\Images\Sprites\b_73.png" />
+    <None Include="Core\Resource\Images\Sprites\b_72.png" />
+    <None Include="Core\Resource\Images\Sprites\b_71.png" />
+    <None Include="Core\Resource\Images\Sprites\b_70.png" />
+    <None Include="Core\Resource\Images\Sprites\b_69.png" />
+    <None Include="Core\Resource\Images\Sprites\b_68-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_68.png" />
+    <None Include="Core\Resource\Images\Sprites\b_67.png" />
+    <None Include="Core\Resource\Images\Sprites\b_66.png" />
+    <None Include="Core\Resource\Images\Sprites\b_65-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_65.png" />
+    <None Include="Core\Resource\Images\Sprites\b_64.png" />
+    <None Include="Core\Resource\Images\Sprites\b_63.png" />
+    <None Include="Core\Resource\Images\Sprites\b_62.png" />
+    <None Include="Core\Resource\Images\Sprites\b_61.png" />
+    <None Include="Core\Resource\Images\Sprites\b_60.png" />
+    <None Include="Core\Resource\Images\Sprites\b_59.png" />
+    <None Include="Core\Resource\Images\Sprites\b_58.png" />
+    <None Include="Core\Resource\Images\Sprites\b_57.png" />
+    <None Include="Core\Resource\Images\Sprites\b_56.png" />
+    <None Include="Core\Resource\Images\Sprites\b_55.png" />
+    <None Include="Core\Resource\Images\Sprites\b_54.png" />
+    <None Include="Core\Resource\Images\Sprites\b_53-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_53.png" />
+    <None Include="Core\Resource\Images\Sprites\b_52-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_52-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_52-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_52.png" />
+    <None Include="Core\Resource\Images\Sprites\b_51-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_51.png" />
+    <None Include="Core\Resource\Images\Sprites\b_50-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_50.png" />
+    <None Include="Core\Resource\Images\Sprites\b_49.png" />
+    <None Include="Core\Resource\Images\Sprites\b_48.png" />
+    <None Include="Core\Resource\Images\Sprites\b_47.png" />
+    <None Include="Core\Resource\Images\Sprites\b_46.png" />
+    <None Include="Core\Resource\Images\Sprites\b_45.png" />
+    <None Include="Core\Resource\Images\Sprites\b_44.png" />
+    <None Include="Core\Resource\Images\Sprites\b_43.png" />
+    <None Include="Core\Resource\Images\Sprites\b_42.png" />
+    <None Include="Core\Resource\Images\Sprites\b_41.png" />
+    <None Include="Core\Resource\Images\Sprites\b_40.png" />
+    <None Include="Core\Resource\Images\Sprites\b_39.png" />
+    <None Include="Core\Resource\Images\Sprites\b_38-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_38.png" />
+    <None Include="Core\Resource\Images\Sprites\b_37-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_37.png" />
+    <None Include="Core\Resource\Images\Sprites\b_36.png" />
+    <None Include="Core\Resource\Images\Sprites\b_35.png" />
+    <None Include="Core\Resource\Images\Sprites\b_34.png" />
+    <None Include="Core\Resource\Images\Sprites\b_33.png" />
+    <None Include="Core\Resource\Images\Sprites\b_32.png" />
+    <None Include="Core\Resource\Images\Sprites\b_31.png" />
+    <None Include="Core\Resource\Images\Sprites\b_30.png" />
+    <None Include="Core\Resource\Images\Sprites\b_29.png" />
+    <None Include="Core\Resource\Images\Sprites\b_28-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_28.png" />
+    <None Include="Core\Resource\Images\Sprites\b_27-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_27.png" />
+    <None Include="Core\Resource\Images\Sprites\b_26-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_26.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25f.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-8pf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-8p.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-6cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-5cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-4cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-3cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-2cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-1cf.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_25.png" />
+    <None Include="Core\Resource\Images\Sprites\b_24.png" />
+    <None Include="Core\Resource\Images\Sprites\b_23.png" />
+    <None Include="Core\Resource\Images\Sprites\b_22.png" />
+    <None Include="Core\Resource\Images\Sprites\b_21.png" />
+    <None Include="Core\Resource\Images\Sprites\b_20-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_20.png" />
+    <None Include="Core\Resource\Images\Sprites\b_19-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_19.png" />
+    <None Include="Core\Resource\Images\Sprites\b_18-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_18.png" />
+    <None Include="Core\Resource\Images\Sprites\b_17.png" />
+    <None Include="Core\Resource\Images\Sprites\b_16.png" />
+    <None Include="Core\Resource\Images\Sprites\b_15-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_15.png" />
+    <None Include="Core\Resource\Images\Sprites\b_14.png" />
+    <None Include="Core\Resource\Images\Sprites\b_13.png" />
+    <None Include="Core\Resource\Images\Sprites\b_12-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_12.png" />
+    <None Include="Core\Resource\Images\Sprites\b_11.png" />
+    <None Include="Core\Resource\Images\Sprites\b_10.png" />
+    <None Include="Core\Resource\Images\Sprites\b_9-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_9-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_9.png" />
+    <None Include="Core\Resource\Images\Sprites\b_8.png" />
+    <None Include="Core\Resource\Images\Sprites\b_7.png" />
+    <None Include="Core\Resource\Images\Sprites\b_6-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_6-2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_6-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_6.png" />
+    <None Include="Core\Resource\Images\Sprites\b_5.png" />
+    <None Include="Core\Resource\Images\Sprites\b_4.png" />
+    <None Include="Core\Resource\Images\Sprites\b_3-gmax.png" />
+    <None Include="Core\Resource\Images\Sprites\b_3-1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_3.png" />
+    <None Include="Core\Resource\Images\Sprites\b_2.png" />
+    <None Include="Core\Resource\Images\Sprites\b_1.png" />
+    <None Include="Core\Resource\Images\Sprites\b_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_155.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_156.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_158.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_159.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_160.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_170.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_174.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_175.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_177.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_178.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_187.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_188.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_189.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_190.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_194.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_195.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_196.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_197.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_198.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_199.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_203.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_209.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_210.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_213.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_215.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_216.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_217.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_218.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_219.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_223.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_224.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_226.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_228.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_229.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_236.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_238.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_239.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_244.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_245.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_246.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_247.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_249.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Resource\Images\Gen 2 Beta Sprites\d97_251.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

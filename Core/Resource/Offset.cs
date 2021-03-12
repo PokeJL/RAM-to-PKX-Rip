@@ -19,7 +19,8 @@ namespace RAM_to_PKX_Rip.Core.Resource
                                 ref int sizeHPEV, ref int sizeAttEV, ref int sizeDefEV, ref int sizeSpeed, ref int sizeSpAttEV,
                                 ref int sizeSpDefEV, ref int sizeCool, ref int sizeBeauty, ref int sizeCute, ref int sizeSmart,
                                 ref int sizeTough, ref int sizeSheen, ref int sizeM1, ref int sizeM2, ref int sizeM3, ref int sizeM4,
-                                ref int sizeIV, ref int sizeNature, ref int encryption, ref int sizeEncryption, int gen)
+                                ref int sizeIV, ref int sizeNature, ref int encryption, ref int sizeEncryption, ref int numOfPokeInGen, 
+                                ref int numOfMovesInGen, ref int pkrus, ref int checksum, ref int checksumCalcDataStart, int gen)
         {
             if (gen == 3)
             {
@@ -77,6 +78,12 @@ namespace RAM_to_PKX_Rip.Core.Resource
                 sizeNature = 1;
                 encryption = 0; //Value not used in generation but set here so I can reuse code
                 sizeEncryption = 1;
+                numOfPokeInGen = 386;
+                numOfMovesInGen = 354;
+                pkrus = 68;
+                checksum = 28;
+                checksumCalcDataStart = 32;
+
             }
 
             if (gen == 4 || gen == 5)
@@ -131,16 +138,23 @@ namespace RAM_to_PKX_Rip.Core.Resource
                 sizeM4 = 2;
                 IV = 40;
                 sizeIV = 4;
+                pkrus = 130;
+                checksum = 6;
+                checksumCalcDataStart = 8;
                 if (gen == 4)
                 {
                     //nature in gen 4 is not stored as its own value so just check first value of array
                     nature = 0;
                     sizeNature = 1;
+                    numOfPokeInGen = 493;
+                    numOfMovesInGen = 467;
                 }
                 else
                 {
                     nature = 65;
                     sizeNature = 1;
+                    numOfPokeInGen = 649;
+                    numOfMovesInGen = 559;
                 }
                 encryption = 0; //Value not used in generation but set here so I can reuse code
                 sizeEncryption = 1;
@@ -202,6 +216,11 @@ namespace RAM_to_PKX_Rip.Core.Resource
                 sizeNature = 1;
                 encryption = 0;
                 sizeEncryption = 4;
+                numOfPokeInGen = 721;
+                numOfMovesInGen = 621;
+                pkrus = 43;
+                checksum = 6;
+                checksumCalcDataStart = 8;
             }
         }
     }

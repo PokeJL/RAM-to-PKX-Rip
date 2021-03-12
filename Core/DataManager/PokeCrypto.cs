@@ -359,5 +359,18 @@ namespace RAM_to_PKX_Rip
             if (BitConverter.ToUInt16(pkm, 0x70) != 0 || BitConverter.ToUInt16(pkm, 0xC0) != 0)
                 pkm = DecryptArray8(pkm);
         }
+
+        /// <summary>
+        /// Gets the checksum of a byte array. Function Modified to meet the needs of the application
+        /// </summary>
+        public static ushort GetCHK(byte[] data, int start, int size)
+        {
+            ushort chk = 0;
+            for (int i = start; i < size; i += 2)
+                chk += BitConverter.ToUInt16(data, i);
+
+            //System.Windows.Forms.MessageBox.Show(Convert.ToString(chk));
+            return chk;
+        }
     }
 }

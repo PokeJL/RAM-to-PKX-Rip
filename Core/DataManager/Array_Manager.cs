@@ -29,9 +29,8 @@ namespace RAM_to_PKX_Rip
 
         public void UpdateCheck(byte[,] pokemon, int column, int found, byte[] convert, ref bool update, int gen)
         {
-            Hex_Conversion hex = new Hex_Conversion();
+            Data_Conversion hex = new Data_Conversion();
             Offset offset = new Offset();
-            int index = 0;
 
             //Offset data
             int PID = 0;
@@ -56,7 +55,7 @@ namespace RAM_to_PKX_Rip
             int sizeAttEV = 0;
             int defEV = 0;
             int sizeDefEV = 0;
-            int speed = 0;
+            int speedEV = 0;
             int sizeSpeed = 0;
             int spAttEV = 0;
             int sizeSpAttEV = 0;
@@ -89,15 +88,22 @@ namespace RAM_to_PKX_Rip
             int encryption = 0;
             int sizeEncryption = 0;
 
+            int numOfPokeInGen = 0;
+            int numOfMovesInGen = 0;
+            int pkrus = 0;
+            int checksum = 0;
+            int checksumCalcDataStart = 0;
+
             offset.Offsets3Later(ref PID, ref dex, ref item, ref ID, ref SID, ref EXP, ref friendship,
-                                ref ability, ref HPEV, ref attEV, ref defEV, ref speed, ref spAttEV, ref spDefEV,
+                                ref ability, ref HPEV, ref attEV, ref defEV, ref speedEV, ref spAttEV, ref spDefEV,
                                 ref cool, ref beauty, ref cute, ref smart, ref tough, ref sheen, ref m1, ref m2,
                                 ref m3, ref m4, ref IV, ref nature, ref sizePID, ref sizeDex, ref sizeItem,
                                 ref sizeID, ref sizeSID, ref sizeEXP, ref sizeFriendship, ref sizeAbility,
                                 ref sizeHPEV, ref sizeAttEV, ref sizeDefEV, ref sizeSpeed, ref sizeSpAttEV,
                                 ref sizeSpDefEV, ref sizeCool, ref sizeBeauty, ref sizeCute, ref sizeSmart,
                                 ref sizeTough, ref sizeSheen, ref sizeM1, ref sizeM2, ref sizeM3, ref sizeM4,
-                                ref sizeIV, ref sizeNature, ref encryption, ref sizeEncryption, gen);
+                                ref sizeIV, ref sizeNature, ref encryption, ref sizeEncryption, ref numOfPokeInGen,
+                                ref numOfMovesInGen, ref pkrus, ref checksum, ref checksumCalcDataStart, gen);
 
             if (found != 0)
             {
@@ -115,7 +121,7 @@ namespace RAM_to_PKX_Rip
                         hex.LittleEndian2D(pokemon, f, defEV, sizeDefEV) == hex.LittleEndian(convert, defEV, sizeDefEV) &&
                         hex.LittleEndian2D(pokemon, f, spAttEV, sizeSpAttEV) == hex.LittleEndian(convert, spAttEV, sizeSpAttEV) &&
                         hex.LittleEndian2D(pokemon, f, spDefEV, sizeSpDefEV) == hex.LittleEndian(convert, spDefEV, sizeSpDefEV) &&
-                        hex.LittleEndian2D(pokemon, f, speed, sizeSpeed) == hex.LittleEndian(convert, speed, sizeSpeed) &&
+                        hex.LittleEndian2D(pokemon, f, speedEV, sizeSpeed) == hex.LittleEndian(convert, speedEV, sizeSpeed) &&
                         hex.LittleEndian2D(pokemon, f, cool, sizeCool) == hex.LittleEndian(convert, cool, sizeCool) &&
                         hex.LittleEndian2D(pokemon, f, beauty, sizeBeauty) == hex.LittleEndian(convert, beauty, sizeBeauty) &&
                         hex.LittleEndian2D(pokemon, f, cute, sizeCute) == hex.LittleEndian(convert, cute, sizeCute) &&
@@ -127,19 +133,17 @@ namespace RAM_to_PKX_Rip
                         hex.LittleEndian2D(pokemon, f, m3, sizeM3) == hex.LittleEndian(convert, m3, sizeM3) &&
                         hex.LittleEndian2D(pokemon, f, m4, sizeM4) == hex.LittleEndian(convert, m4, sizeM4) &&
                         hex.LittleEndian2D(pokemon, f, nature, sizeNature) == hex.LittleEndian(convert, nature, sizeNature) &&
-                        hex.LittleEndian2D(pokemon, f, encryption, sizeEncryption) == hex.LittleEndian(convert, encryption, sizeEncryption))
+                        hex.LittleEndian2D(pokemon, f, encryption, sizeEncryption) == hex.LittleEndian(convert, encryption, sizeEncryption) &&
+                        hex.LittleEndian2D(pokemon, f, EXP, sizeEXP) == hex.LittleEndian(convert, EXP, sizeEXP)
+                        )
                     {
                         update = true;
-
-                        if(hex.LittleEndian2D(pokemon, f, EXP, sizeEXP) < hex.LittleEndian(convert, EXP, sizeEXP))
-                            Array1Dto2D(pokemon, f, column, convert);
-                        
                     }
                 }
             }
         }
 
-        public void AddString(byte[,] pokemon, int row, int start1, byte[] data, int start2, int length)
+        public void AddPart1Dto2D(byte[,] pokemon, int row, int start1, byte[] data, int start2, int length)
         {
             for (int i = 0; i < length; i++)
             {

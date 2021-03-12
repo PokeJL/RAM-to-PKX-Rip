@@ -11,12 +11,21 @@ using System.IO;
 using System.Security;
 using System.Drawing.Imaging;
 using RAM_to_PKX_Rip.Core.Generation;
+using RAM_to_PKX_Rip.Core.Resource;
+
+using System.Reflection;
 
 namespace RAM_to_PKX_Rip
 {
     public partial class Form1 : Form
     {
         //Needed values to rip Pokemon
+        Data_Conversion hex = new Data_Conversion();
+        Dex_Conversion dex = new Dex_Conversion();
+        Pokemon_Data data = new Pokemon_Data();
+        File_Manager fm = new File_Manager();
+        Gen_3_and_Later_Rip rip = new Gen_3_and_Later_Rip();
+        List<string> list = new List<string>();
         public
         byte[,] pokemon;
         bool fileAdded = false;
@@ -25,10 +34,25 @@ namespace RAM_to_PKX_Rip
         int column;
         int found = 0;
         int speciesIndex = 0;
+        int idIndex = 0;
+        int moveIndex = 0;
+        int selectIndex = 0;
+        int dexNum = 0;
+        int size = 0;
+        int gen = 0;
+        bool endTask;
+        
+        private delegate void DataSetMethodInvoker();
+        public delegate void MaxProgressMethodInvoker(int amount);
+        public delegate void CurrentProgressMethodInvoker(int amount);
+        public delegate bool EndThread();
 
         public Form1()
         {
             InitializeComponent();
+            rip.MP += new Gen_3_and_Later_Rip.MaxProgressMethodInvoker(SetAmount);
+            rip.CP += new Gen_3_and_Later_Rip.CurrentProgressMethodInvoker(UpdateProgress);
+            rip.End += new Gen_3_and_Later_Rip.EndThread(Stopper);
         }
 
         private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -78,99 +102,219 @@ namespace RAM_to_PKX_Rip
                 }
             }
         }
-
+        
         private void Rip_Click(object sender, EventArgs e)
         {
-            Save1.Enabled = false;
-            Name1.Enabled = false;
-            Save2.Enabled = false;
-            Name2.Enabled = false;
-            Save3.Enabled = false;
-            Name3.Enabled = false;
-            Save4.Enabled = false;
-            Name4.Enabled = false;
-            Save5.Enabled = false;
-            Name5.Enabled = false;
-            Save6.Enabled = false;
-            Name6.Enabled = false;
-            Save7.Enabled = false;
-            Name7.Enabled = false;
-            Save8.Enabled = false;
-            Name8.Enabled = false;
-            Save9.Enabled = false;
-            Name9.Enabled = false;
-            Save10.Enabled = false;
-            Name10.Enabled = false;
-            Save11.Enabled = false;
-            Name11.Enabled = false;
-            Save12.Enabled = false;
-            Name12.Enabled = false;
-            Save13.Enabled = false;
-            Name13.Enabled = false;
-            Save14.Enabled = false;
-            Name14.Enabled = false;
-            Save15.Enabled = false;
-            Name15.Enabled = false;
-            Save16.Enabled = false;
-            Name16.Enabled = false;
-            Save17.Enabled = false;
-            Name17.Enabled = false;
-            Save18.Enabled = false;
-            Name18.Enabled = false;
-            Save19.Enabled = false;
-            Name19.Enabled = false;
-            Save20.Enabled = false;
-            Name20.Enabled = false;
-            Save21.Enabled = false;
-            Name21.Enabled = false;
-            Save22.Enabled = false;
-            Name22.Enabled = false;
-            Save23.Enabled = false;
-            Name23.Enabled = false;
-            Save24.Enabled = false;
-            Name24.Enabled = false;
+            if (!backgroundWorker1.IsBusy)
+            {
+                backgroundWorker1.WorkerSupportsCancellation = true;
+                Save_Button.Enabled = false;
+                Rip.Text = "Stop Rip";
+                OpenFileBTN.Enabled = false;
+                comboBox1.Enabled = false;
+                endTask = false;
+                backgroundWorker1.RunWorkerAsync();
+            }
+            else
+            {
+                backgroundWorker1.CancelAsync();
+                endTask = true;
+                comboBox1.Items.Clear();
+                OpenFileBTN.Enabled = true;
+                RipProgressBar.Value = 0;
+                Rip.Text = "Rip";
+            }
+        }
 
+        private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            RipProgressBar.Value = e.ProgressPercentage;
+        }
+
+        private void SaveDialog(int slot)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (gen == 3)
+            {
+                saveFileDialog1.Filter = "PK3|*.pk3";
+            }
+            if (gen == 4)
+            {
+                saveFileDialog1.Filter = "PK4|*.pk4";
+            }
+            if (gen == 5)
+            {
+                saveFileDialog1.Filter = "PK5|*.pk5";
+            }
+            if (gen == 2)
+            {
+                saveFileDialog1.Filter = "PK6|*.pk6";
+            }
+            if (gen == 2)
+            {
+                saveFileDialog1.Filter = "PK2|*.pk2";
+            }
+
+            saveFileDialog1.Title = "Save Pokemon";
+            saveFileDialog1.ShowDialog();
+
+            if (saveFileDialog1.FileName != "")
+            {
+                byte[] saveData = new byte[column];
+                for (int i = 0; i < column; i++)
+                {
+                    saveData[i] = pokemon[slot, i];
+                }
+
+                fm.WriteFile(string.Format("{0}", saveFileDialog1.FileName), saveData);
+            }
+        }
+
+        private void Gen3_CheckedChanged(object sender, EventArgs e)
+        {
+            Info.Text = "The rip process will take some time.\nOpponent's Pokemon can be after active party at\nthe top of the list.\nFRLG Trainer Hill/Tower Shiny Pokemon \nwill not appear in results.";
+        }
+
+        private void Gen4_CheckedChanged(object sender, EventArgs e)
+        {
+            Info.Text = "The rip process will take a little time.\nOpponent's Pokemon can be found at \nthe end of the list.";
+        }
+
+        private void Gen5_CheckedChanged(object sender, EventArgs e)
+        {
+            Info.Text = "Vs. Recorder Pokemon may have game set to \nBlack version.\nParty and opponent's Pokemon can be found at \nthe end of the list.";
+        }
+
+        private void Gen6_CheckedChanged(object sender, EventArgs e)
+        {
+            Info.Text = "Multi battle not tested. \nUse PKHeX to dump Vs. Recorder playback.";
+        }
+
+        private void Gen2SW97_CheckedChanged(object sender, EventArgs e)
+        {
+            Info.Text = "-Put the Pokemon you want to dump in the first \n slot of the party.\n" +
+                "-In the emulator click on \n Tool -> Debug -> Memory Viewer then click the \n save option.\n" +
+                "-In the Address box input 0000D6B2 and in the\n Size box input 30. Then click OK.\n" +
+                "-Save the .dmp file somewhere that you can find it.\n" +
+                "-The name in the drop down menu is what the\n Pokemon will be in the game.";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectIndex = comboBox1.SelectedIndex;
+
+            if (list.Count == 0)
+                list.Add("1");
+
+            if (gen == 2)
+            {
+                Gen_2_Beta_Data beta = new Gen_2_Beta_Data();
+                if(dexNum >= 152)
+                    list[0] = "d97_" + dexNum.ToString();
+                else
+                    list[0] = "b_" + dexNum.ToString();
+                PName.Text = beta.GetNameString(dexNum);
+                ID.Text = "ID: " + hex.LittleEndian2D(pokemon, selectIndex, 9, 2).ToString();
+                SID.Text = "SID: 0";
+                Move1.Text = "Move 1: " + data.getMove(hex.ConOneHex(pokemon[0, 5]));
+                Move2.Text = "Move 2: " + data.getMove(hex.ConOneHex(pokemon[0, 6]));
+                Move3.Text = "Move 3: " + data.getMove(hex.ConOneHex(pokemon[0, 7]));
+                Move4.Text = "Move 4: " + data.getMove(hex.ConOneHex(pokemon[0, 8]));
+            }
+            else
+            {
+                if (gen == 3)
+                    dexNum = dex.Gen3GetDexNum(hex.LittleEndian2D(pokemon, selectIndex, speciesIndex, 2));
+                else
+                    dexNum = hex.LittleEndian2D(pokemon, selectIndex, speciesIndex, 2);
+
+                PName.Text = data.getPokemonName(dexNum);
+                ID.Text = "ID: " + hex.LittleEndian2D(pokemon, selectIndex, idIndex, 2).ToString();
+                SID.Text = "SID: " + hex.LittleEndian2D(pokemon, selectIndex, idIndex + 2, 2).ToString();
+                Move1.Text = "Move 1: " + data.getMove(hex.LittleEndian2D(pokemon, selectIndex, moveIndex, 2));
+                Move2.Text = "Move 2: " + data.getMove(hex.LittleEndian2D(pokemon, selectIndex, moveIndex + 2, 2));
+                Move3.Text = "Move 3: " + data.getMove(hex.LittleEndian2D(pokemon, selectIndex, moveIndex + 4, 2));
+                Move4.Text = "Move 4: " + data.getMove(hex.LittleEndian2D(pokemon, selectIndex, moveIndex + 6, 2));
+
+                list[0] = "b_" + dexNum.ToString();
+            }
+            Icon.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(list[0]);
+        }
+
+        private void Save_Button_Click(object sender, EventArgs e)
+        {
+            SaveDialog(selectIndex);
+        }
+        
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (backgroundWorker1.CancellationPending)
+            {
+                e.Cancel = true;
+                return;
+            }
             if (fileAdded == true)
             {
-                row = 24;
+                row = 1010;
                 if (Gen3.Checked == true)
                 {
                     column = 80;
                     pokemon = new byte[row, column];
                     speciesIndex = 32;
+                    idIndex = 4;
+                    moveIndex = 44;
+                    size = 100;
+                    gen = 3;
                 }
-                if (Gen4.Checked == true || Gen5.Checked == true)
+                if (Gen4.Checked == true)
                 {
                     column = 136;
                     pokemon = new byte[row, column];
                     speciesIndex = 8;
+                    idIndex = 12;
+                    moveIndex = 40;
+                    size = 236;
+                    gen = 4;
+                }
+                if (Gen5.Checked == true)
+                {
+                    column = 136;
+                    pokemon = new byte[row, column];
+                    speciesIndex = 8;
+                    idIndex = 12;
+                    moveIndex = 40;
+                    size = 236;
+                    gen = 5;
                 }
                 if (Gen6.Checked == true)
                 {
                     column = 232;
                     pokemon = new byte[row, column];
                     speciesIndex = 8;
+                    idIndex = 12;
+                    moveIndex = 90;
+                    size = 260;
+                    gen = 6;
+                }
+                if (Gen2SW97.Checked == true)
+                {
+                    column = 63;
+                    row = 1;
+                    pokemon = new byte[row, column];
+                    speciesIndex = 3;
+                    moveIndex = 0;
+                    size = 48;
+                    gen = 2;
                 }
 
-                if (Gen3.Checked == true)
+                if (Gen2SW97.Checked == true)
                 {
-                    Gen_3 rip3 = new Gen_3();
-                    found = rip3.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), row, column);
+                    Gen_2_SW97 g2 = new Gen_2_SW97();
+                    found = g2.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), size, ref dexNum);
                 }
-                if (Gen4.Checked == true)
+                else
                 {
-                    Gen_4 rip4 = new Gen_4();
-                    found = rip4.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), row, column);
-                }
-                if (Gen5.Checked == true)
-                {
-                    Gen_5 rip5 = new Gen_5();
-                    found  = rip5.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), column);
-                }
-                if (Gen6.Checked == true)
-                {
-                    Gen_6 rip6 = new Gen_6();
-                    found = rip6.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), column);
+                    found = rip.Start(pokemon, string.Format("{0}", openFileDialog1.FileName), row, column, size, gen);
                 }
             }
             else
@@ -180,331 +324,68 @@ namespace RAM_to_PKX_Rip
 
             System.Windows.Forms.MessageBox.Show(found.ToString() + " Pokemon found.");
 
-            if (found != 0)
+            BindComboBoxData();
+        }
+
+        private void BindComboBoxData()
+        {
+            if (comboBox1.InvokeRequired)
             {
-                Hex_Conversion hex = new Hex_Conversion();
-                if(1<=found)
+                // Worker thread.
+                comboBox1.Invoke(new DataSetMethodInvoker(BindComboBoxData));
+            }
+            else
+            {
+                object[] ItemObject = new object[found];
+                if (found != 0)
                 {
-                    Save1.Enabled = true;
-                    Name1.Enabled = true;
-                    Name1.Text = hex.LittleEndian2D(pokemon, 0, speciesIndex, 2).ToString();
+                    comboBox1.Items.Clear();
+                    for (int i = 0; i < found; i++)
+                    {
+                        if (gen == 3)
+                            dexNum = dex.Gen3GetDexNum(hex.LittleEndian2D(pokemon, i, speciesIndex, 2));
+                        else
+                            dexNum = hex.LittleEndian2D(pokemon, i, speciesIndex, 2);
+
+                        ItemObject[i] = data.getPokemonName(dexNum);
+                    }
+                    comboBox1.Items.AddRange(ItemObject);
+                    Save_Button.Enabled = true;
                 }
-                if (2 <= found)
-                {
-                    Save2.Enabled = true;
-                    Name2.Enabled = true;
-                    Name2.Text = hex.LittleEndian2D(pokemon, 1, speciesIndex, 2).ToString();
-                }
-                if (3 <= found)
-                {
-                    Save3.Enabled = true;
-                    Name3.Enabled = true;
-                    Name3.Text = hex.LittleEndian2D(pokemon, 2, speciesIndex, 2).ToString();
-                }
-                if (4 <= found)
-                {
-                    Save4.Enabled = true;
-                    Name4.Enabled = true;
-                    Name4.Text = hex.LittleEndian2D(pokemon, 3, speciesIndex, 2).ToString();
-                }
-                if (5 <= found)
-                {
-                    Save5.Enabled = true;
-                    Name5.Enabled = true;
-                    Name5.Text = hex.LittleEndian2D(pokemon, 4, speciesIndex, 2).ToString();
-                }
-                if (6 <= found)
-                {
-                    Save6.Enabled = true;
-                    Name6.Enabled = true;
-                    Name6.Text = hex.LittleEndian2D(pokemon, 5, speciesIndex, 2).ToString();
-                }
-                if (7 <= found)
-                {
-                    Save7.Enabled = true;
-                    Name7.Enabled = true;
-                    Name7.Text = hex.LittleEndian2D(pokemon, 6, speciesIndex, 2).ToString();
-                }
-                if (8 <= found)
-                {
-                    Save8.Enabled = true;
-                    Name8.Enabled = true;
-                    Name8.Text = hex.LittleEndian2D(pokemon, 7, speciesIndex, 2).ToString();
-                }
-                if (9 <= found)
-                {
-                    Save9.Enabled = true;
-                    Name9.Enabled = true;
-                    Name9.Text = hex.LittleEndian2D(pokemon, 8, speciesIndex, 2).ToString();
-                }
-                if (10 <= found)
-                {
-                    Save10.Enabled = true;
-                    Name10.Enabled = true;
-                    Name10.Text = hex.LittleEndian2D(pokemon, 9, speciesIndex, 2).ToString();
-                }
-                if (11 <= found)
-                {
-                    Save11.Enabled = true;
-                    Name11.Enabled = true;
-                    Name11.Text = hex.LittleEndian2D(pokemon, 10, speciesIndex, 2).ToString();
-                }
-                if (12 <= found)
-                {
-                    Save12.Enabled = true;
-                    Name12.Enabled = true;
-                    Name12.Text = hex.LittleEndian2D(pokemon, 11, speciesIndex, 2).ToString();
-                }
-                if (13 <= found)
-                {
-                    Save13.Enabled = true;
-                    Name13.Enabled = true;
-                    Name13.Text = hex.LittleEndian2D(pokemon, 12, speciesIndex, 2).ToString();
-                }
-                if (14 <= found)
-                {
-                    Save14.Enabled = true;
-                    Name14.Enabled = true;
-                    Name14.Text = hex.LittleEndian2D(pokemon, 13, speciesIndex, 2).ToString();
-                }
-                if (15 <= found)
-                {
-                    Save15.Enabled = true;
-                    Name15.Enabled = true;
-                    Name15.Text = hex.LittleEndian2D(pokemon, 14, speciesIndex, 2).ToString();
-                }
-                if (16 <= found)
-                {
-                    Save16.Enabled = true;
-                    Name16.Enabled = true;
-                    Name16.Text = hex.LittleEndian2D(pokemon, 15, speciesIndex, 2).ToString();
-                }
-                if (17 <= found)
-                {
-                    Save17.Enabled = true;
-                    Name17.Enabled = true;
-                    Name17.Text = hex.LittleEndian2D(pokemon, 16, speciesIndex, 2).ToString();
-                }
-                if (18 <= found)
-                {
-                    Save18.Enabled = true;
-                    Name18.Enabled = true;
-                    Name18.Text = hex.LittleEndian2D(pokemon, 17, speciesIndex, 2).ToString();
-                }
-                if (19 <= found)
-                {
-                    Save19.Enabled = true;
-                    Name19.Enabled = true;
-                    Name19.Text = hex.LittleEndian2D(pokemon, 18, speciesIndex, 2).ToString();
-                }
-                if (20 <= found)
-                {
-                    Save20.Enabled = true;
-                    Name20.Enabled = true;
-                    Name20.Text = hex.LittleEndian2D(pokemon, 19, speciesIndex, 2).ToString();
-                }
-                if (21 <= found)
-                {
-                    Save21.Enabled = true;
-                    Name21.Enabled = true;
-                    Name21.Text = hex.LittleEndian2D(pokemon, 20, speciesIndex, 2).ToString();
-                }
-                if (22 <= found)
-                {
-                    Save22.Enabled = true;
-                    Name22.Enabled = true;
-                    Name22.Text = hex.LittleEndian2D(pokemon, 21, speciesIndex, 2).ToString();
-                }
-                if (23 <= found)
-                {
-                    Save23.Enabled = true;
-                    Name23.Enabled = true;
-                    Name23.Text = hex.LittleEndian2D(pokemon, 22, speciesIndex, 2).ToString();
-                }
-                if (24 <= found)
-                {
-                    Save24.Enabled = true;
-                    Name24.Enabled = true;
-                    Name24.Text = hex.LittleEndian2D(pokemon, 23, speciesIndex, 2).ToString();
-                }
+                Rip.Enabled = true;
+                OpenFileBTN.Enabled = true;
+                comboBox1.Enabled = true;
             }
         }
 
-        private void SaveDialog(int slot)
+        private void SetAmount(int amount)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            if (Gen3.Checked == true)
+            if (RipProgressBar.InvokeRequired)
             {
-                saveFileDialog1.Filter = "PK3|*.pk3";
+                RipProgressBar.Invoke(new MaxProgressMethodInvoker(SetAmount), amount);
             }
-            if (Gen4.Checked == true)
+            else
             {
-                saveFileDialog1.Filter = "PK4|*.pk4";
-            }
-            if (Gen5.Checked == true)
-            {
-                saveFileDialog1.Filter = "PK5|*.pk5";
-            }
-            if (Gen6.Checked == true)
-            {
-                saveFileDialog1.Filter = "PK6|*.pk6";
-            }
-
-            saveFileDialog1.Title = "Save Pokemon";
-            saveFileDialog1.ShowDialog();
-            File_Manager fm = new File_Manager();
-
-            if (saveFileDialog1.FileName != "")
-            {
-                byte[] saveData = new byte[column];
-                for (int i = 0; i < column; i++)
-                {
-                    saveData[i] = pokemon[slot - 1, i];
-                }
-
-                fm.WriteFile(string.Format("{0}", saveFileDialog1.FileName), saveData);
+                RipProgressBar.Maximum = amount;
+                RipProgressBar.Value = 0;
             }
         }
 
-        private void Save1_Click(object sender, EventArgs e)
+        private void UpdateProgress(int amount)
         {
-            SaveDialog(1);
+            if (RipProgressBar.InvokeRequired)
+            {
+                RipProgressBar.Invoke(new CurrentProgressMethodInvoker(UpdateProgress), amount);
+            }
+            else
+            {
+                RipProgressBar.Value = amount;
+            }
         }
 
-        private void Save2_Click(object sender, EventArgs e)
+        public bool Stopper()
         {
-            SaveDialog(2);
-        }
-
-        private void Save3_Click(object sender, EventArgs e)
-        {
-            SaveDialog(3);
-        }
-
-        private void Save4_Click(object sender, EventArgs e)
-        {
-            SaveDialog(4);
-        }
-
-        private void Save5_Click(object sender, EventArgs e)
-        {
-            SaveDialog(5);
-        }
-
-        private void Save6_Click(object sender, EventArgs e)
-        {
-            SaveDialog(6);
-        }
-
-        private void Save7_Click(object sender, EventArgs e)
-        {
-            SaveDialog(7);
-        }
-
-        private void Save8_Click(object sender, EventArgs e)
-        {
-            SaveDialog(8);
-        }
-
-        private void Save9_Click(object sender, EventArgs e)
-        {
-            SaveDialog(9);
-        }
-
-        private void Save10_Click(object sender, EventArgs e)
-        {
-            SaveDialog(10);
-        }
-
-        private void Save11_Click(object sender, EventArgs e)
-        {
-            SaveDialog(11);
-        }
-
-        private void Save12_Click(object sender, EventArgs e)
-        {
-            SaveDialog(12);
-        }
-
-        private void Save13_Click(object sender, EventArgs e)
-        {
-            SaveDialog(13);
-        }
-
-        private void Save14_Click(object sender, EventArgs e)
-        {
-            SaveDialog(14);
-        }
-
-        private void Save15_Click(object sender, EventArgs e)
-        {
-            SaveDialog(15);
-        }
-
-        private void Save16_Click(object sender, EventArgs e)
-        {
-            SaveDialog(16);
-        }
-
-        private void Save17_Click(object sender, EventArgs e)
-        {
-            SaveDialog(17);
-        }
-
-        private void Save18_Click(object sender, EventArgs e)
-        {
-            SaveDialog(18);
-        }
-
-        private void Save19_Click(object sender, EventArgs e)
-        {
-            SaveDialog(19);
-        }
-
-        private void Save20_Click(object sender, EventArgs e)
-        {
-            SaveDialog(20);
-        }
-
-        private void Save21_Click(object sender, EventArgs e)
-        {
-            SaveDialog(21);
-        }
-
-        private void Save22_Click(object sender, EventArgs e)
-        {
-            SaveDialog(22);
-        }
-
-        private void Save23_Click(object sender, EventArgs e)
-        {
-            SaveDialog(23);
-        }
-
-        private void Save24_Click(object sender, EventArgs e)
-        {
-            SaveDialog(24);
-        }
-
-        private void Gen3_CheckedChanged(object sender, EventArgs e)
-        {
-            Info.Text = "Accressy in results will increase in later builds.\nSome incrorrect Pokemon may appear in results.";
-        }
-
-        private void Gen4_CheckedChanged(object sender, EventArgs e)
-        {
-            Info.Text = "Pokemon form data not implemented. Accressy \nin results will increase in later builds.";
-        }
-
-        private void Gen5_CheckedChanged(object sender, EventArgs e)
-        {
-            Info.Text = "Vs. Recorder Pokemon may have game set to \nBlack version. Duplicate Pokemon will be \nreplaced with the highest level version.";
-        }
-
-        private void Gen6_CheckedChanged(object sender, EventArgs e)
-        {
-            Info.Text = "Multi battle not tested. \nUse PKHeX to dump Vs. Recorder playback. \nDuplicate Pokemon will be replaced \nwith the highest level copy.";
+            return endTask;
         }
     }
-
 }
