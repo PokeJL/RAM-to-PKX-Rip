@@ -146,7 +146,7 @@ namespace RAM_to_PKX_Rip
             {
                 saveFileDialog1.Filter = "PK5|*.pk5";
             }
-            if (gen == 2)
+            if (gen == 6)
             {
                 saveFileDialog1.Filter = "PK6|*.pk6";
             }
